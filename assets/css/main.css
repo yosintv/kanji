@@ -1,0 +1,34 @@
+/* Custom Tailwind Extensions */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    /* The Bento Box Glass Effect */
+    .kanji-card {
+        @apply bg-slate-900/40 border border-white/5 backdrop-blur-md 
+               transition-all duration-500 ease-out hover:scale-[1.02] 
+               hover:border-blue-500/50 hover:shadow-[0_0_40px_-10px_rgba(59,130,246,0.3)];
+    }
+
+    /* Professional Japanese Typography */
+    .kanji-font {
+        font-family: "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
+        @apply antialiased subpixel-antialiased tracking-tighter;
+    }
+
+    /* SEO-Friendly Gradient Text */
+    .text-gradient {
+        @apply bg-clip-text text-transparent bg-gradient-to-br from-white to-slate-500;
+    }
+}
+
+/* Smooth page transitions for SEO UX */
+.page-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
