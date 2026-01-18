@@ -2,51 +2,61 @@ import Link from 'next/link';
 
 export default function HomePage() {
   const levels = [
-    { id: 'n5', label: 'Beginner', count: '100+', color: 'bg-emerald-50 text-emerald-600' },
-    { id: 'n4', label: 'Elementary', count: '180+', color: 'bg-blue-50 text-blue-600' },
-    { id: 'n3', label: 'Intermediate', count: '300+', color: 'bg-indigo-50 text-indigo-600' },
-    { id: 'n2', label: 'Advanced', count: '600+', color: 'bg-orange-50 text-orange-600' },
-    { id: 'n1', label: 'Expert', count: '1200+', color: 'bg-rose-50 text-rose-600' },
+    { id: 'n5', title: 'Beginner', count: '100+' },
+    { id: 'n4', title: 'Elementary', count: '180+' },
+    { id: 'n3', title: 'Intermediate', count: '300+' },
+    { id: 'n2', title: 'Advanced', count: '600+' },
+    { id: 'n1', title: 'Mastery', count: '1200+' },
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-20">
-      {/* 2026 Typography Hero */}
-      <section className="text-center mb-24">
-        <h1 className="text-7xl md:text-9xl font-black tracking-tighter text-slate-900 mb-8">
-          STUDY <span className="text-blue-600 italic">SMARTER.</span>
+    <div className="max-w-7xl mx-auto px-6 pb-24">
+      {/* 2026 Kinetic Hero */}
+      <section className="text-center py-20 mb-16">
+        <h1 className="text-7xl md:text-[10rem] font-black leading-[0.8] mb-8 tracking-tighter text-slate-950 uppercase italic">
+          Study<br /><span className="text-blue-600">Smarter.</span>
         </h1>
-        <p className="text-xl text-slate-400 max-w-2xl mx-auto font-medium">
-          Free interactive Kanji lists, vocabulary tools, and JLPT mock exams designed for the modern learner.
+        <p className="text-xl text-slate-400 font-medium max-w-xl mx-auto uppercase tracking-[0.2em] leading-relaxed">
+          High-performance study tools for the modern Japanese learner.
         </p>
       </section>
 
-      {/* Bento Selection Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[600px]">
-        {/* N5 Focus Card */}
-        <Link href="/n5" className="md:col-span-8 bg-slate-900 rounded-[2rem] p-10 flex flex-col justify-end relative overflow-hidden group">
-           <div className="absolute top-10 right-10 text-8xl font-black text-white/5 group-hover:scale-110 transition-transform duration-700">N5</div>
-           <span className="text-blue-400 font-bold uppercase tracking-[0.3em] text-xs mb-2">Most Popular</span>
-           <h2 className="text-4xl font-bold text-white mb-2">JLPT N5 Master List</h2>
-           <p className="text-slate-400">The perfect starting point for your Japanese journey.</p>
+      {/* Modern Bento Grid Structure */}
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-8 h-auto md:h-[650px]">
+        {/* Primary Focus Card (N5) */}
+        <Link href="/n5" className="md:col-span-8 bento-card relative overflow-hidden group flex flex-col justify-end">
+          <div className="absolute -top-10 -right-10 text-[18rem] font-black text-slate-50 group-hover:text-blue-50 transition-colors pointer-events-none select-none">N5</div>
+          <div className="relative z-10">
+            <span className="inline-block px-4 py-1 bg-blue-600 text-white rounded-full text-[10px] font-black uppercase tracking-widest mb-4">Popular Start</span>
+            <h2 className="text-5xl font-black mb-4 tracking-tighter uppercase">JLPT N5 Mastery</h2>
+            <p className="text-slate-500 max-w-md text-lg leading-relaxed font-medium">
+              Establish a rock-solid foundation with the first 100 essential Kanji and basic vocabulary.
+            </p>
+          </div>
         </Link>
 
-        {/* N4 Card */}
-        <Link href="/n4" className="md:col-span-4 bg-blue-600 rounded-[2rem] p-10 flex flex-col justify-center text-white hover:bg-blue-700 transition-colors">
-          <h2 className="text-6xl font-black mb-2 tracking-tighter">N4</h2>
-          <p className="font-bold opacity-80 uppercase text-xs tracking-widest">Elementary Level</p>
+        {/* Secondary Focus Card (N4) */}
+        <Link href="/n4" className="md:col-span-4 bg-slate-900 rounded-[2.5rem] p-10 flex flex-col justify-between group hover:bg-blue-600 transition-all text-white shadow-2xl shadow-slate-900/20">
+          <h2 className="text-7xl font-black tracking-tighter">N4</h2>
+          <div>
+            <h3 className="text-2xl font-bold uppercase mb-2 tracking-tight">Elementary</h3>
+            <p className="text-slate-400 group-hover:text-white/80 text-sm italic font-medium tracking-widest uppercase">Expand Your Fluency →</p>
+          </div>
         </Link>
 
-        {/* Smaller Bento Items */}
-        {levels.slice(2).map(lvl => (
-          <Link key={lvl.id} href={`/${lvl.id}`} className="md:col-span-4 bg-white border border-slate-100 rounded-[2rem] p-8 hover:shadow-2xl hover:shadow-blue-500/5 transition-all flex items-center justify-between">
-            <div>
-              <h3 className="text-2xl font-black uppercase tracking-tighter">{lvl.id}</h3>
-              <p className="text-xs text-slate-400 font-bold uppercase tracking-widest">{lvl.label}</p>
-            </div>
-            <div className={`w-12 h-12 rounded-2xl ${lvl.color} flex items-center justify-center font-bold`}>→</div>
-          </Link>
-        ))}
+        {/* Tertiary Card (N3) */}
+        <Link href="/n3" className="md:col-span-4 bento-card flex items-center justify-between group">
+           <div>
+              <h3 className="text-3xl font-black uppercase tracking-tighter">N3 Level</h3>
+              <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mt-1">Intermediate</p>
+           </div>
+           <div className="w-12 h-12 rounded-2xl bg-slate-100 flex items-center justify-center font-black group-hover:bg-blue-600 group-hover:text-white transition-all">→</div>
+        </Link>
+
+        {/* Placeholder for Data Scaling (N2/N1) */}
+        <div className="md:col-span-8 bg-slate-100 rounded-[2.5rem] border-2 border-dashed border-slate-200 flex items-center justify-center p-8">
+           <p className="text-slate-400 font-bold uppercase tracking-[0.3em] text-xs">Processing N2 & N1 Data Streams...</p>
+        </div>
       </div>
     </div>
   );
