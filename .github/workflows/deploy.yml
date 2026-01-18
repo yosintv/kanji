@@ -1,5 +1,5 @@
 name: Deploy to GitHub Pages
- 
+
 on:
   push:
     branches: ["main"]
@@ -21,9 +21,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: 'npm'
-          # Looks for package-lock.json inside #2 web-platform
-          cache-dependency-path: './web-platform/package.json'          
+          # Cache is removed here to prevent the "Paths not resolved" error
+          # It will be slightly slower but much more reliable for troubleshooting
 
       - name: Install dependencies
         working-directory: ./web-platform
@@ -31,13 +30,13 @@ jobs:
 
       - name: Build with Next.js
         working-directory: ./web-platform
-        # The "." ensures it builds the project located in #2 web-platform
+        # The "." forces Next.js to look for 'src/app' inside 'web-platform'
         run: npx next build .
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Points to the 'out' folder created inside #2 web-platform
+          # This folder is created by 'output: export' in next.config.js
           path: ./web-platform/out
 
   deploy:
