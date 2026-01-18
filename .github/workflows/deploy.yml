@@ -1,9 +1,10 @@
-name: Deploy to GitHub Pages 
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
-      - main # Triggers every time you push to the main branch
+      - main # Auto-run on push to main
+  workflow_dispatch: # MANUAL MODE: Adds a "Run workflow" button in GitHub Actions UI
 
 permissions:
   contents: write
@@ -30,7 +31,7 @@ jobs:
 
       - name: Build and Export Static Site
         working-directory: ./web-platform
-        run: npm run build # This creates the 'out' folder
+        run: npm run build 
 
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
