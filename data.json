@@ -1,48 +1,48 @@
 {
-  "n5": [
+  "level": "N5",
+  "category": "Kanji N5-N1 Test Set Collection",
+  "kanji_set": [
     {
-      "kanji": "一",
-      "onyomi": "イチ",
-      "kunyomi": "ひと-つ",
-      "meaning": "One"
-    },
-    {
-      "kanji": "二",
-      "onyomi": "ニ",
-      "kunyomi": "ふた-つ",
-      "meaning": "Two"
-    },
-    {
-      "kanji": "三",
-      "onyomi": "サン",
-      "kunyomi": "みっ-つ",
-      "meaning": "Three"
-    },
-    {
+      "id": "n5-001",
       "kanji": "日",
-      "onyomi": "ニチ, ジツ",
-      "kunyomi": "ひ, -び, -か",
-      "meaning": "Day, Sun"
-    },
-    {
-      "kanji": "本",
-      "onyomi": "ホン",
-      "kunyomi": "もと",
-      "meaning": "Book, Origin"
-    }
-  ],
-  "n4": [
-    {
-      "kanji": "空",
-      "onyomi": "クウ",
-      "kunyomi": "そら, あ-く, から",
-      "meaning": "Sky, Empty"
-    },
-    {
-      "kanji": "海",
-      "onyomi": "カイ",
-      "kunyomi": "うみ",
-      "meaning": "Sea, Ocean"
+      "slug": "hi-sun",
+      "meaning": "Day / Sun / Japan",
+      "romaji": "hi / nichi",
+      "onyomi": ["ニチ", "ジツ"],
+      "kunyomi": ["ひ", "-び", "-か"],
+      "related_kanji": [
+        {"kanji": "月", "meaning": "Moon/Month", "slug": "tsuki"},
+        {"kanji": "本", "meaning": "Book/Origin", "slug": "hon"},
+        {"kanji": "火", "meaning": "Fire", "slug": "hi-fire"}
+      ],
+      "grammar_note": "Crucial for dates and time. Note the rendaku (sound change) in 'bi' like in 'nichiyoubi'.",
+      "examples": [
+        {
+          "japanese": "日曜日は友達と一緒に公園へ行って、ピクニックをします。",
+          "romaji": "Nichiyoubi wa tomodachi to issho ni kouen e itte, pikuniku o shimasu.",
+          "english": "On Sunday, I will go to the park with my friends and have a picnic."
+        },
+        {
+          "japanese": "日本のアニメは世界中でとても人気があって、面白いです。",
+          "romaji": "Nihon no anime wa sekaijuu de totemo ninki ga atte, omoshiroi desu.",
+          "english": "Japanese anime is very popular all over the world and is interesting."
+        },
+        {
+          "japanese": "誕生日のプレゼントに新しい本をもらって、とても嬉しかったです。",
+          "romaji": "Tanjoubi no purezento ni atarashii hon o moratte, totemo ureshikatta desu.",
+          "english": "I received a new book as a birthday present and was very happy."
+        },
+        {
+          "japanese": "毎日の生活の中で、日本語を練習することはとても大切だと思います。",
+          "romaji": "Mainichi no seikatsu no naka de, nihongo o renshuu suru koto wa totemo taisetsu da to omoimasu.",
+          "english": "I think practicing Japanese in daily life is very important."
+        },
+        {
+          "japanese": "今日は天気がいいので、窓から明るい日の光が入ってきます。",
+          "romaji": "Kyou wa tenki ga ii node, mado kara akarui hi no hikari ga haitte kimasu.",
+          "english": "Since the weather is good today, bright sunlight is coming through the window."
+        }
+      ]
     }
   ]
 }
