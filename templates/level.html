@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ level }} Mastery | Kanjitest.online</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&family=Noto+Sans+JP:wght@500;900&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            background-color: #020617; 
+            font-family: 'Inter', sans-serif; 
+            color: #f8fafc;
+        }
+        .kanji-font { 
+            font-family: 'Noto Sans JP', sans-serif; 
+        }
+        .kanji-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .kanji-card:hover {
+            background: rgba(59, 130, 246, 0.1);
+            border-color: #3b82f6;
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -15px rgba(59, 130, 246, 0.2);
+        }
+        .glass-header {
+            background: rgba(2, 6, 23, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="glass-header fixed top-0 w-full z-50">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <a href="/" class="text-slate-400 hover:text-white transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                    </svg>
+                </a>
+                <h1 class="text-xl font-black tracking-tighter uppercase italic">
+                    JLPT <span class="text-blue-500">{{ level }}</span> MASTER LIST
+                </h1>
+            </div>
+            <div class="bg-blue-600/10 border border-blue-500/20 px-4 py-1 rounded-full text-[10px] font-black tracking-widest text-blue-400 uppercase">
+                {{ kanji|length }} Characters Loaded
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-32 pb-20 px-6 max-w-7xl mx-auto">
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+            {% for item in kanji %}
+            <div class="kanji-card rounded-3xl p-6 flex flex-col items-center text-center group">
+                <div class="kanji-font text-6xl mb-4 text-white group-hover:scale-110 transition-transform duration-500">
+                    {{ item.kanji }}
+                </div>
+                
+                <div class="w-full space-y-1 mb-4">
+                    <p class="text-[10px] font-bold text-blue-500 uppercase tracking-widest">Onyomi</p>
+                    <p class="text-sm font-medium text-slate-300">{{ item.onyomi or '-' }}</p>
+                </div>
+
+                <div class="w-full space-y-1 mb-6">
+                    <p class="text-[10px] font-bold text-emerald-500 uppercase tracking-widest">Kunyomi</p>
+                    <p class="text-sm font-medium text-slate-300">{{ item.kunyomi or '-' }}</p>
+                </div>
+
+                <div class="mt-auto w-full py-2 bg-white/5 rounded-xl border border-white/5 group-hover:bg-blue-600 group-hover:border-blue-500 transition-all">
+                    <p class="text-xs font-bold text-slate-400 group-hover:text-white transition-colors px-2 truncate">
+                        {{ item.meaning }}
+                    </p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+
+    <footer class="py-12 text-center border-t border-white/5">
+        <p class="text-[10px] font-black text-slate-700 uppercase tracking-[0.4em]">
+            End of {{ level }} Data Stream • Kanjitest.online
+        </p>
+    </footer>
+
+</body>
+</html>
