@@ -3,8 +3,8 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main # Auto-run on push to main
-  workflow_dispatch: # MANUAL MODE: Adds a "Run workflow" button in GitHub Actions UI
+      - main
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -14,6 +14,11 @@ permissions:
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
+    # This tells GitHub that all "run" commands happen inside the web-platform folder
+    defaults:
+      run:
+        working-directory: ./web-platform
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -26,16 +31,15 @@ jobs:
           cache-dependency-path: "web-platform/package.json"
 
       - name: Install Dependencies
-        working-directory: ./web-platform
         run: npm install
 
       - name: Build and Export Static Site
-        working-directory: ./web-platform
         run: npm run build 
 
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
         with:
+          # Note: path is relative to the root of the repo, not working-directory
           path: ./web-platform/out
 
       - name: Deploy to GitHub Pages
