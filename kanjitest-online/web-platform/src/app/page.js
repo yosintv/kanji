@@ -1,60 +1,52 @@
-import Link from 'next/link'; 
+import Link from 'next/link';
 
 export default function HomePage() {
   const levels = [
-    { id: 'n5', color: 'bg-blue-600', label: 'Beginner' },
-    { id: 'n4', color: 'bg-green-600', label: 'Basic' },
-    { id: 'n3', color: 'bg-yellow-600', label: 'Intermediate' },
-    { id: 'n2', color: 'bg-orange-600', label: 'Advanced' },
-    { id: 'n1', color: 'bg-red-600', label: 'Master' },
+    { id: 'n5', label: 'Beginner', count: '100+', color: 'bg-emerald-50 text-emerald-600' },
+    { id: 'n4', label: 'Elementary', count: '180+', color: 'bg-blue-50 text-blue-600' },
+    { id: 'n3', label: 'Intermediate', count: '300+', color: 'bg-indigo-50 text-indigo-600' },
+    { id: 'n2', label: 'Advanced', count: '600+', color: 'bg-orange-50 text-orange-600' },
+    { id: 'n1', label: 'Expert', count: '1200+', color: 'bg-rose-50 text-rose-600' },
   ];
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-12">
-      {/* SEO Header Section */}
-      <header className="text-center mb-16">
-        <h1 className="text-5xl font-extrabold text-gray-900 mb-4">
-          Master the JLPT Kanji & Grammar
+    <div className="max-w-7xl mx-auto px-4 py-20">
+      {/* 2026 Typography Hero */}
+      <section className="text-center mb-24">
+        <h1 className="text-7xl md:text-9xl font-black tracking-tighter text-slate-900 mb-8">
+          STUDY <span className="text-blue-600 italic">SMARTER.</span>
         </h1>
-        <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-          Free practice tests, vocabulary lists, and grammar guides for all levels of the Japanese Language Proficiency Test.
+        <p className="text-xl text-slate-400 max-w-2xl mx-auto font-medium">
+          Free interactive Kanji lists, vocabulary tools, and JLPT mock exams designed for the modern learner.
         </p>
-      </header>
-
-      {/* JLPT Level Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-5 gap-6 mb-20">
-        {levels.map((level) => (
-          <Link key={level.id} href={`/${level.id}`} className="group">
-            <div className={`h-40 ${level.color} rounded-2xl shadow-lg flex flex-col items-center justify-center text-white transform transition hover:-translate-y-2 hover:shadow-2xl`}>
-              <span className="text-4xl font-black uppercase">{level.id}</span>
-              <span className="text-sm font-medium opacity-90">{level.label}</span>
-            </div>
-          </Link>
-        ))}
-      </div>
-
-      {/* Content Section (Important for Google Ranking) */}
-      <section className="grid md:grid-cols-3 gap-12 text-gray-700">
-        <div className="space-y-4">
-          <h2 className="text-2xl font-bold text-gray-800">Free Practice Tests</h2>
-          <p>Prepare for your exam with our interactive quiz engine. Real JLPT-style questions generated from our database.</p>
-        </div>
-        <div className="space-y-4">
-          <h2 className="text-2xl font-bold text-gray-800">Kanji Database</h2>
-          <p>Search thousands of characters with full stroke order, Onyomi, Kunyomi, and example sentences for every N-level.</p>
-        </div>
-        <div className="space-y-4">
-          <h2 className="text-2xl font-bold text-gray-800">SEO Optimized</h2>
-          <p>Every grammar point and kanji has its own dedicated page with Romaji slugs to help you find answers fast via Google.</p>
-        </div>
       </section>
 
-      {/* AdSense Placeholder Area */}
-      <div className="mt-20 p-8 border-2 border-dashed border-gray-200 rounded-lg text-center text-gray-400">
-        <p>Sponsored Content</p>
-        <div className="h-24 flex items-center justify-center">
-          {/* AdSense component will render here */}
-        </div>
+      {/* Bento Selection Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[600px]">
+        {/* N5 Focus Card */}
+        <Link href="/n5" className="md:col-span-8 bg-slate-900 rounded-[2rem] p-10 flex flex-col justify-end relative overflow-hidden group">
+           <div className="absolute top-10 right-10 text-8xl font-black text-white/5 group-hover:scale-110 transition-transform duration-700">N5</div>
+           <span className="text-blue-400 font-bold uppercase tracking-[0.3em] text-xs mb-2">Most Popular</span>
+           <h2 className="text-4xl font-bold text-white mb-2">JLPT N5 Master List</h2>
+           <p className="text-slate-400">The perfect starting point for your Japanese journey.</p>
+        </Link>
+
+        {/* N4 Card */}
+        <Link href="/n4" className="md:col-span-4 bg-blue-600 rounded-[2rem] p-10 flex flex-col justify-center text-white hover:bg-blue-700 transition-colors">
+          <h2 className="text-6xl font-black mb-2 tracking-tighter">N4</h2>
+          <p className="font-bold opacity-80 uppercase text-xs tracking-widest">Elementary Level</p>
+        </Link>
+
+        {/* Smaller Bento Items */}
+        {levels.slice(2).map(lvl => (
+          <Link key={lvl.id} href={`/${lvl.id}`} className="md:col-span-4 bg-white border border-slate-100 rounded-[2rem] p-8 hover:shadow-2xl hover:shadow-blue-500/5 transition-all flex items-center justify-between">
+            <div>
+              <h3 className="text-2xl font-black uppercase tracking-tighter">{lvl.id}</h3>
+              <p className="text-xs text-slate-400 font-bold uppercase tracking-widest">{lvl.label}</p>
+            </div>
+            <div className={`w-12 h-12 rounded-2xl ${lvl.color} flex items-center justify-center font-bold`}>→</div>
+          </Link>
+        ))}
       </div>
     </div>
   );
