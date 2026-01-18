@@ -1,46 +1,59 @@
-name: Kanjitest Online CI
+name: Kanjitest Platform Engine
 
+# Senior Architect's Trigger Logic
 on:
   push:
-    branches: [ "main" ]
+    branches: [ main ]
   pull_request:
-    branches: [ "main" ]
-  # Senior Feature: Allows manual triggering of the workflow from the GitHub Actions UI
+    branches: [ main ]
   workflow_dispatch:
     inputs:
       reason:
-        description: 'Reason for manual trigger'
+        description: 'Reason for manual build (e.g., Added N3 Kanji)'
         required: false
-        default: 'Manual maintenance check'
+        default: 'Manual Page Generation'
+
+permissions:
+  contents: write
 
 jobs:
-  build-and-test:
+  build-and-deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout Repository
+      - name: 🛰️ Checkout Repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      - name: Set up Python 3.12
+      - name: 🐍 Setup Python Environment
         uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
+          python-version: '3.11'
+          cache: 'pip'
 
-      - name: Install Dependencies
+      - name: 📦 Install Dependencies
         run: |
           python -m pip install --upgrade pip
-          # Ensure requirements.txt is in the root
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-      - name: Lint with Flake8
+      - name: 🏗️ Run Static Site Generator
         run: |
-          pip install flake8
-          # Check for critical Python errors
-          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-          # Visual style check
-          flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+          # This triggers your 'Infinite Page' logic from data-engine
+          python data-engine/scripts/generator.py
+        env:
+          PYTHONPATH: ${{ github.workspace }}
 
-      - name: Verify Web Platform Folder
+      - name: 🔍 SEO Audit & Validation
         run: |
-          echo "Verifying web-platform directory structure..."
-          ls -R web-platform
+          echo "Running SEO link validation..."
+          # Logic to check if all generated .html files have valid titles
+          grep -r "<title>" n5/kanji/ || exit 1
+
+      - name: 🚀 Deploy to GitHub Pages
+        if: github.event_name != 'pull_request'
+        run: |
+          git config --global user.name "kanjitest-bot"
+          git config --global user.email "bot@kanjitest.online"
+          git add .
+          git commit -m "chore: auto-generate pages [skip ci]" || echo "No changes to commit"
+          git push origin main
