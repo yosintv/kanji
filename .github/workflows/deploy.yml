@@ -23,7 +23,7 @@ jobs:
           node-version: "20"
           cache: 'npm'
           # Looks for package-lock.json inside #2 web-platform
-          cache-dependency-path: './web-platform/package-lock.json'
+          cache-dependency-path: './web-platform/package.json'          
 
       - name: Install dependencies
         working-directory: ./web-platform
