@@ -3,25 +3,42 @@
 @tailwind utilities;
 
 :root {
-  --bg-app: #f8fafc;
-  --accent: #2563eb;
+  --bg-app: #fcfcfc;
+  --nav-glass: rgba(255, 255, 255, 0.8);
+  --accent-blue: #2563eb;
 }
 
-body {
-  @apply bg-[var(--bg-app)] text-slate-900 antialiased;
-  font-family: 'Inter', system-ui, sans-serif;
+@layer base {
+  body {
+    @apply bg-[var(--bg-app)] text-slate-900 antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
 }
 
-.glass-nav {
-  @apply fixed top-0 w-full z-50 bg-white/70 backdrop-blur-xl border-b border-slate-200/60;
+@layer components {
+  /* Premium Japanese Typography */
+  .font-japanese {
+    font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+    font-feature-settings: "palt";
+  }
+
+  /* Glassmorphism for Fixed Header */
+  .glass-header {
+    @apply fixed top-0 w-full z-50 bg-white/70 backdrop-blur-xl border-b border-slate-200/50;
+  }
+
+  /* Modern Bento Card */
+  .bento-card {
+    @apply bg-white border border-slate-200 rounded-[2.5rem] p-10 
+           transition-all duration-500 ease-out shadow-sm
+           hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-2;
+  }
 }
 
-.bento-card {
-  @apply bg-white border border-slate-200 rounded-[2.5rem] p-10 
-         transition-all duration-500 ease-out shadow-sm
-         hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-2;
+/* Custom Scrollbar for 2026 UX Standards */
+::-webkit-scrollbar {
+  width: 6px;
 }
-
-.font-japanese {
-  font-feature-settings: "palt";
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-200 rounded-full hover:bg-blue-600 transition-colors;
 }
