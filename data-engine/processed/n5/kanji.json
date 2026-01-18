@@ -1,0 +1,39 @@
+[
+  {
+    "character": "日",
+    "meaning": "Sun, Day",
+    "onyomi": "ニチ, ジツ",
+    "kunyomi": "ひ, -び",
+    "reading_romaji": "nichi",
+    "slug": "nichi-sun-day",
+    "examples": [
+      {
+        "word": "日本",
+        "reading": "にほん",
+        "meaning": "Japan"
+      },
+      {
+        "word": "毎日",
+        "reading": "まいにち",
+        "meaning": "Every day"
+      }
+    ],
+    "jlpt_level": "N5"
+  },
+  {
+    "character": "本",
+    "meaning": "Book, Origin",
+    "onyomi": "ホン",
+    "kunyomi": "もと",
+    "reading_romaji": "hon",
+    "slug": "hon-book-origin",
+    "examples": [
+      {
+        "word": "本棚",
+        "reading": "ほんだな",
+        "meaning": "Bookshelf"
+      }
+    ],
+    "jlpt_level": "N5"
+  }
+]
