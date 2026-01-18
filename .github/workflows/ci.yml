@@ -1,0 +1,46 @@
+name: Kanjitest Online CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  # Senior Feature: Allows manual triggering of the workflow from the GitHub Actions UI
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: 'Reason for manual trigger'
+        required: false
+        default: 'Manual maintenance check'
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          # Ensure requirements.txt is in the root
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      - name: Lint with Flake8
+        run: |
+          pip install flake8
+          # Check for critical Python errors
+          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+          # Visual style check
+          flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+
+      - name: Verify Web Platform Folder
+        run: |
+          echo "Verifying web-platform directory structure..."
+          ls -R web-platform
