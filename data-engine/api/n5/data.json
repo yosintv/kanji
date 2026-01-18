@@ -1,7 +1,10 @@
 {
   "level": "N5",
   "category": "Kanji N5-N1 Test Set Collection",
+  "folder_name": "Japanese_Language_Learning",
   "kanji_set": [
+
+    
     {
       "id": "n5-001",
       "kanji": "日",
@@ -12,35 +15,120 @@
       "kunyomi": ["ひ", "-び", "-か"],
       "related_kanji": [
         {"kanji": "月", "meaning": "Moon/Month", "slug": "tsuki"},
-        {"kanji": "本", "meaning": "Book/Origin", "slug": "hon"},
-        {"kanji": "火", "meaning": "Fire", "slug": "hi-fire"}
+        {"kanji": "本", "meaning": "Book/Origin", "slug": "hon"}
       ],
-      "grammar_note": "Crucial for dates and time. Note the rendaku (sound change) in 'bi' like in 'nichiyoubi'.",
+      "grammar_note": "Crucial for dates. Watch for 'ka' in days of the month (futsuka, mikka) and 'bi' in days of the week.",
       "examples": [
         {
-          "japanese": "日曜日は友達と一緒に公園へ行って、ピクニックをします。",
-          "romaji": "Nichiyoubi wa tomodachi to issho ni kouen e itte, pikuniku o shimasu.",
-          "english": "On Sunday, I will go to the park with my friends and have a picnic."
+          "japanese": "日曜日は休みです。",
+          "romaji": "Nichiyoubi wa yasumi desu.",
+          "english": "Sunday is a holiday."
         },
         {
-          "japanese": "日本のアニメは世界中でとても人気があって、面白いです。",
-          "romaji": "Nihon no anime wa sekaijuu de totemo ninki ga atte, omoshiroi desu.",
-          "english": "Japanese anime is very popular all over the world and is interesting."
+          "japanese": "日本に行きたいです。",
+          "romaji": "Nihon ni ikitai desu.",
+          "english": "I want to go to Japan."
+        }
+      ]
+    },
+    {
+      "id": "n5-002",
+      "kanji": "月",
+      "slug": "tsuki-moon",
+      "meaning": "Moon / Month",
+      "romaji": "tsuki / getsu / gatsu",
+      "onyomi": ["ゲツ", "ガツ"],
+      "kunyomi": ["つき"],
+      "related_kanji": [
+        {"kanji": "日", "meaning": "Sun/Day", "slug": "hi-sun"}
+      ],
+      "grammar_note": "Use 'gatsu' for the names of months (e.g., Ichigatsu) and 'getsu' for the day of the week (Getsuyoubi).",
+      "examples": [
+        {
+          "japanese": "月がきれいです。",
+          "romaji": "Tsuki ga kirei desu.",
+          "english": "The moon is beautiful."
         },
         {
-          "japanese": "誕生日のプレゼントに新しい本をもらって、とても嬉しかったです。",
-          "romaji": "Tanjoubi no purezento ni atarashii hon o moratte, totemo ureshikatta desu.",
-          "english": "I received a new book as a birthday present and was very happy."
+          "japanese": "一月は寒いですね。",
+          "romaji": "Ichigatsu wa samui desu ne.",
+          "english": "January is cold, isn't it?"
+        }
+      ]
+    },
+    {
+      "id": "n5-003",
+      "kanji": "火",
+      "slug": "hi-fire",
+      "meaning": "Fire",
+      "romaji": "hi / ka",
+      "onyomi": ["カ"],
+      "kunyomi": ["ひ", "-び"],
+      "related_kanji": [
+        {"kanji": "山", "meaning": "Mountain", "slug": "yama"}
+      ],
+      "grammar_note": "Combined with 'Mountain', it creates 'Kazan' (Volcano). Used for Tuesday (Kayoubi).",
+      "examples": [
+        {
+          "japanese": "火曜日にテストがあります。",
+          "romaji": "Kayoubi ni tesuto ga arimasu.",
+          "english": "There is a test on Tuesday."
         },
         {
-          "japanese": "毎日の生活の中で、日本語を練習することはとても大切だと思います。",
-          "romaji": "Mainichi no seikatsu no naka de, nihongo o renshuu suru koto wa totemo taisetsu da to omoimasu.",
-          "english": "I think practicing Japanese in daily life is very important."
+          "japanese": "火をつけてください。",
+          "romaji": "Hi o tsukete kudasai.",
+          "english": "Please light the fire."
+        }
+      ]
+    },
+    {
+      "id": "n5-004",
+      "kanji": "水",
+      "slug": "mizu-water",
+      "meaning": "Water",
+      "romaji": "mizu / sui",
+      "onyomi": ["スイ"],
+      "kunyomi": ["みず"],
+      "related_kanji": [
+        {"kanji": "氷", "meaning": "Ice", "slug": "koori"}
+      ],
+      "grammar_note": "The Onyomi 'sui' is used for Wednesday (Suiyoubi). 'Mizu' is the general term for water.",
+      "examples": [
+        {
+          "japanese": "水を飲みます。",
+          "romaji": "Mizu o nomimasu.",
+          "english": "I drink water."
         },
         {
-          "japanese": "今日は天気がいいので、窓から明るい日の光が入ってきます。",
-          "romaji": "Kyou wa tenki ga ii node, mado kara akarui hi no hikari ga haitte kimasu.",
-          "english": "Since the weather is good today, bright sunlight is coming through the window."
+          "japanese": "水曜日に会いましょう。",
+          "romaji": "Suiyoubi ni aimashou.",
+          "english": "Let's meet on Wednesday."
+        }
+      ]
+    },
+    {
+      "id": "n5-005",
+      "kanji": "木",
+      "slug": "ki-tree",
+      "meaning": "Tree / Wood",
+      "romaji": "ki / moku",
+      "onyomi": ["モク", "ボク"],
+      "kunyomi": ["き"],
+      "related_kanji": [
+        {"kanji": "本", "meaning": "Book/Origin", "slug": "hon"},
+        {"kanji": "休", "meaning": "Rest", "slug": "yasu-mu"}
+      ],
+      "grammar_note": "A person leaning against a 'tree' (木) creates the Kanji for 'rest' (休). Used for Thursday (Mokuyoubi).",
+      "examples": [
+        {
+          "japanese": "木の下で休みます。",
+          "romaji": "Ki no shita de yasumimasu.",
+          "english": "I rest under the tree."
+        },
+        {
+          "japanese": "木曜日は忙しいです。",
+          "romaji": "Mokuyoubi wa isogashii desu.",
+          "english": "Thursday is busy."
         }
       ]
     }
