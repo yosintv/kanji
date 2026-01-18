@@ -5,7 +5,687 @@
   "kanji_set": [
 
     
+{
+  "id": "n5-025",
+  "kanji": "年",
+  "slug": "toshi-year",
+  "meaning": "Year",
+  "romaji": "toshi / nen",
+  "onyomi": ["ネン"],
+  "kunyomi": ["とし"],
+  "related_kanji": [
+    {"kanji": "午", "meaning": "Noon", "slug": "uma"},
+    {"kanji": "牛", "meaning": "Cow", "slug": "ushi"},
+    {"kanji": "毎", "meaning": "Every", "slug": "mai"},
+    {"kanji": "集", "meaning": "Gather", "slug": "atsu-meru"},
+    {"kanji": "生", "meaning": "Life", "slug": "sei"}
+  ],
+  "grammar_note": "Used for counting years and specific calendar years. 'Kyonen' (last year) and 'Rainen' (next year) are essential vocabulary for daily conversation.",
+  "examples": [
     {
+      "japanese": "来年の夏休みには、今まで一生懸命に貯めてきたお金を使って家族と一緒に一ヶ月間かけてヨーロッパをゆっくりと旅行する予定を立てています。",
+      "romaji": "Rainen no natsuyasumi ni wa, ima made isshoukenmei ni tamete kita okane o tsukatte kazoku to issho ni ikkagetsukan kakete yooroppa o yukkuri to ryokou suru yotei o tatete imasu.",
+      "english": "For next year's summer vacation, I am making plans to travel leisurely through Europe with my family for a whole month using the money I have worked hard to save up until now."
+    },
+    {
+      "japanese": "私が日本に来てから今年でちょうど三年になりますが、最初は全く分からなかった日本語も今では日常生活で困らない程度に話せるようになりました。",
+      "romaji": "Watashi ga nihon ni kite kara kotoshi de choudo sannen ni narimasu ga, saisho wa mattaku wakaranakatta nihongo mo ima dewa nichijou seikatsu de komaranai teido ni hanaseru you ni narimashita.",
+      "english": "It has been exactly three years this year since I came to Japan, and I am now able to speak Japanese well enough to not have trouble in daily life, even though I didn't understand it at all at first."
+    },
+    {
+      "japanese": "一年の計は元旦にありという有名な言葉があるように、新しい年が始まった最初の日にその年の一年間の目標をしっかりと決めることは非常に大切です。",
+      "romaji": "Ichinen no kei wa gantan ni ari to iu yuumei na kotoba ga aru you ni, atarashii toshi ga hajimatta saisho no hi ni sono toshi no ichinenkan no mokuhyou o shikkari to kimeru koto wa hijou ni taisetsu desu.",
+      "english": "As the famous saying 'the plan for the year is made on New Year's Day' goes, it is extremely important to firmly decide on your goals for the year on the very first day the new year begins."
+    }
+  ]
+},
+{
+  "id": "n5-024",
+  "kanji": "百",
+  "slug": "hyaku-hundred",
+  "meaning": "Hundred",
+  "romaji": "hyaku",
+  "onyomi": ["ヒャク", "ビャク", "ピャク"],
+  "kunyomi": ["もも"],
+  "related_kanji": [
+    {"kanji": "白", "meaning": "White", "slug": "shiro"},
+    {"kanji": "的", "meaning": "Target", "slug": "mato"},
+    {"kanji": "宿", "meaning": "Inn/Lodging", "slug": "yado"},
+    {"kanji": "皆", "meaning": "Everyone", "slug": "mina"},
+    {"kanji": "層", "meaning": "Layer", "slug": "sou"}
+  ],
+  "grammar_note": "Be aware of phonetic changes: 300 is 'San-byaku', 600 is 'Roppyaku', and 800 is 'Happyaku'.",
+  "examples": [
+    {
+      "japanese": "この古いお寺は今から八百年以上も前に建てられたものですが、今でも当時の美しい姿をそのまま残しており、世界中から多くの観光客が訪れます。",
+      "romaji": "Kono furui otera wa ima kara happyakunen ijou mo mae ni taterareta mono desu ga, ima demo touji no utsukushii sugata o sonomama nokoshite ori, sekaijuu kara ooku no kankoukyaku ga otozuremasu.",
+      "english": "This old temple was built more than eight hundred years ago, but it still retains its beautiful appearance from that time exactly as it was, and many tourists from all over the world visit it."
+    },
+    {
+      "japanese": "今回の数学のテストで運よく百点を取ることができたので、自分へのご褒美としてずっと欲しかった新しいゲームソフトを買いに行くことにしました。",
+      "romaji": "Konkai no suugaku no tesuto de unyoku hyakuten o toru koto ga dekita node, jibun e no gohoubi toshite zutto hoshikatta atarashii geemu sofuto o kai ni iku koto ni shimashita.",
+      "english": "Since I was lucky enough to get a hundred points on this math test, I decided to go buy the new game software I've wanted for a long time as a reward for myself."
+    },
+    {
+      "japanese": "家の近くにあるスーパーマーケットでは、毎週水曜日になると色々な野菜が全部百円均一で売られるので、開店前から主婦の人たちが長い行列を作っています。",
+      "romaji": "Ie no chikaku ni aru suupaamaaketto dewa, maishuu suiyoubi ni naru to iroiro na yasai ga zenbu hyakuen kin'itsu de urareru node, kaiten mae kara shufu no hitotachi ga nagai gyouretsu o tsukutte imasu.",
+      "english": "At the supermarket near my house, various vegetables are all sold for a flat rate of one hundred yen every Wednesday, so housewives form long lines even before the store opens."
+    }
+  ]
+},
+{
+  "id": "n5-023",
+  "kanji": "十",
+  "slug": "juu-ten",
+  "meaning": "Ten",
+  "romaji": "juu / ji",
+  "onyomi": ["ジュウ", "ジッ"],
+  "kunyomi": ["とお", "と"],
+  "related_kanji": [
+    {"kanji": "千", "meaning": "Thousand", "slug": "sen"},
+    {"kanji": "汁", "meaning": "Soup", "slug": "shiru"},
+    {"kanji": "古", "meaning": "Old", "slug": "furu-i"},
+    {"kanji": "支", "meaning": "Support", "slug": "sasa-eru"},
+    {"kanji": "協", "meaning": "Cooperation", "slug": "kyou"}
+  ],
+  "grammar_note": "A single vertical and horizontal stroke. When counting the 10th day of the month, the irregular reading is 'Tooka'.",
+  "examples": [
+    {
+      "japanese": "明日は十月十日で私の親友の誕生日なので、みんなで集まってサプライズパーティーを開いて盛大にお祝いをしようと計画しています。",
+      "romaji": "Ashita wa juugatsu tooka de watashi no shinyuu no tanjoubi na node, minna de atsumatte sapuraizu paatii o hiraite seidai ni oiwai o shiyou to keikaku shite imasu.",
+      "english": "Tomorrow is October 10th and it is my best friend's birthday, so we are planning to gather together, throw a surprise party, and celebrate grandly."
+    },
+    {
+      "japanese": "この本を読み終えるまでにはまだ十時間くらいかかると思いますが、内容が非常に興味深いので最後まで一気に読んでしまいたい気分です。",
+      "romaji": "Kono hon o yomioreiru made ni wa mada juujikan kurai kakaru to omoimasu ga, naiyou ga hijou ni kyoumibukai node saigo made ikki ni yonde shimaitai kibun desu.",
+      "english": "I think it will take about ten more hours to finish reading this book, but since the content is so interesting, I feel like reading it all at once until the end."
+    },
+    {
+      "japanese": "私が子供の頃、この町にはまだ信号機が十個もありませんでしたが、今では発展して大きなビルやショッピングモールがたくさん建っています。",
+      "romaji": "Watashi ga kodomo no koro, kono machi ni wa mada shingouki ga jukko mo arimasen deshita ga, ima dewa hatten shite ookina biru ya shoppingu mooru ga takusan tatte imasu.",
+      "english": "When I was a child, there weren't even ten traffic lights in this town, but now it has developed and many large buildings and shopping malls have been built."
+    }
+  ]
+},
+{
+  "id": "n5-022",
+  "kanji": "九",
+  "slug": "kyuu-nine",
+  "meaning": "Nine",
+  "romaji": "kyuu / ku",
+  "onyomi": ["キュウ", "ク"],
+  "kunyomi": ["ここの", "ここの-つ"],
+  "related_kanji": [
+    {"kanji": "丸", "meaning": "Round", "slug": "maru"},
+    {"kanji": "軌", "meaning": "Orbit", "slug": "ki"},
+    {"kanji": "究", "meaning": "Research", "slug": "kiwa-meru"},
+    {"kanji": "鳩", "meaning": "Pigeon", "slug": "hato"},
+    {"kanji": "熟", "meaning": "Ripen", "slug": "ju-ku"}
+  ],
+  "grammar_note": "Has two Onyomi readings. September is always 'Kugatsu' (not Kyuugatsu), and 9:00 is 'Kuji'.",
+  "examples": [
+    {
+      "japanese": "九月に入ると少しずつ涼しい風が吹き始めて、夏の厳しい暑さが和らぎ、公園の木々も次第に秋の色に変わり始めます。",
+      "romaji": "Kugatsu ni hairu to sukoshizutsu suzushii kaze ga fukihajimete, natsu no kibishii atsusa ga yawaragi, kouen no kigi mo shidai ni aki no iro ni kawarihajimemasu.",
+      "english": "As we enter September, a cool breeze starts to blow bit by bit, the harsh summer heat eases, and the trees in the park gradually begin to change into autumn colors."
+    },
+    {
+      "japanese": "明日の朝は九時からの会議に遅れないように、いつもより一時間早く家を出て、駅前のカフェで資料の最終チェックをするつもりです。",
+      "romaji": "Ashita no asa wa kuji kara no kaigi ni okurenai you ni, itsumo yori ichijikan hayaku ie o dete, ekimae no kafe de shiryou no saishuu chekku o suru tsumori desu.",
+      "english": "I intend to leave the house an hour earlier than usual tomorrow morning to not be late for the 9:00 meeting and do a final check of the materials at the cafe in front of the station."
+    },
+    {
+      "japanese": "九つのリンゴを家族みんなで分けるのは少し難しいので、半分に切ってから全員が同じ量だけ食べられるように工夫することにしました。",
+      "romaji": "Kokonotsu no ringo o kazoku minna de wakeru no wa sukoshi muzukashii node, hanbun ni kitte kara zen'in ga onaji ryou dake taberareru you ni kufuu suru koto ni shimashita.",
+      "english": "Dividing nine apples among the whole family is a bit difficult, so we decided to cut them in half and find a way so that everyone can eat the same amount."
+    }
+  ]
+},
+{
+  "id": "n5-021",
+  "kanji": "八",
+  "slug": "hachi-eight",
+  "meaning": "Eight",
+  "romaji": "hachi",
+  "onyomi": ["ハチ"],
+  "kunyomi": ["や", "や-つ", "や-っつ", "よう"],
+  "related_kanji": [
+    {"kanji": "分", "meaning": "Minute/Part", "slug": "wa-karu"},
+    {"kanji": "公", "meaning": "Public", "slug": "oo-yake"},
+    {"kanji": "松", "meaning": "Pine tree", "slug": "matsu"},
+    {"kanji": "粉", "meaning": "Powder", "slug": "kona"},
+    {"kanji": "穴", "meaning": "Hole", "slug": "ana"}
+  ],
+  "grammar_note": "The shape spreads outward at the bottom, symbolizing prosperity in Japanese culture. August is 'Hachigatsu'.",
+  "examples": [
+    {
+      "japanese": "八月は夏休みの真っ最中なので、海や山へ遊びに行く計画を立てている子供たちが多く、街全体がとても賑やかな雰囲気になります。",
+      "romaji": "Hachigatsu wa natsuyasumi no massaichuu na node, umi ya yama e asobi ni iku keikaku o tatete iru kodomotachi ga ooku, machi zentai ga totemo nigiyaka na fun'iki ni narimasu.",
+      "english": "August is right in the middle of summer vacation, so there are many children making plans to go to the sea or mountains, and the entire town takes on a very lively atmosphere."
+    },
+    {
+      "japanese": "テーブルの上に並んでいる八つの美味しいドーナツの中から、どれを最初に食べるか迷ってしまいますが、やはりチョコが一番気になります。",
+      "romaji": "Teeburu no ue ni narande iru yattsu no oishii doonatsu no naka kara, dore o saisho ni taberu ka mayotte shimaimasu ga, yahari choko ga ichiban ki ni narimasu.",
+      "english": "I'm having trouble deciding which one to eat first from the eight delicious donuts lined up on the table, but the chocolate one definitely catches my eye the most."
+    },
+    {
+      "japanese": "毎朝八時になると近くの小学校のチャイムが聞こえてくるので、それを合図に私も急いで仕事に行くための準備を終わらせるようにしています。",
+      "romaji": "Maiasa hachiji ni naru to chikaku no shougakkou no chaimu ga kikoete kuru node, sore o aizu ni watashi mo isoide shigoto ni iku tame no junbi o owaraseru you ni shite imasu.",
+      "english": "Every morning at 8:00, I can hear the chime of the nearby elementary school, so I use that as a signal to finish my preparations for going to work in a hurry."
+    }
+  ]
+},
+  {
+  "id": "n5-020",
+  "kanji": "五",
+  "slug": "go-five",
+  "meaning": "Five",
+  "romaji": "go",
+  "onyomi": ["ゴ"],
+  "kunyomi": ["いつ", "いつ-つ"],
+  "related_kanji": [
+    {"kanji": "午", "meaning": "Noon", "slug": "uma-hiru"},
+    {"kanji": "語", "meaning": "Language", "slug": "go-kata-ru"},
+    {"kanji": "互", "meaning": "Mutually", "slug": "tagai"},
+    {"kanji": "吾", "meaning": "I/Me", "slug": "ware"},
+    {"kanji": "伍", "meaning": "Five-man squad", "slug": "itsu-tsu"}
+  ],
+  "grammar_note": "A count of five. When counting objects using 'tsu', it becomes 'itsutsu', and the 5th day of the month is 'itsuka'.",
+  "examples": [
+    {
+      "japanese": "来月の五日に大切な会議が予定されているので、それまでに必要な資料を全て完璧に準備しておかなければなりません。",
+      "romaji": "Raigetsu no itsuka ni taisetsu na kaigi ga yotei saredete iru node, sore made ni hitsuyou na shiryou o subete kanpeki ni junbi shite okanakereba narimasen.",
+      "english": "Since an important meeting is scheduled for the 5th of next month, I must prepare all the necessary materials perfectly by then."
+    },
+    {
+      "japanese": "このレストランで一番人気のハンバーグセットを五つ注文しましたので、出来上がるまでもうしばらくお待ちください。",
+      "romaji": "Kono resutoran de ichiban ninki no hanbaagu setto o itsutsu chuumon shimashita node, dekiagaru made mou shibaraku omachi kudasai.",
+      "english": "I have ordered five of this restaurant's most popular hamburger sets, so please wait a little longer until they are ready."
+    },
+    {
+      "japanese": "私は今から五年前にはまだ日本語が全く話せませんでしたが、毎日一生懸命勉強したおかげで今は日常会話ができるようになりました。",
+      "romaji": "Watashi wa ima kara gonen mae ni wa mada nihongo ga mattaku hanasemasen deshita ga, mainichi isshoukenmei benkyou shita okage de ima wa nichijou kaiwa ga dekiru you ni narimashita.",
+      "english": "Five years ago from now, I couldn't speak Japanese at all, but thanks to studying hard every day, I am now able to have daily conversations."
+    }
+  ]
+},
+{
+  "id": "n5-019",
+  "kanji": "四",
+  "slug": "yon-four",
+  "meaning": "Four",
+  "romaji": "yon / shi",
+  "onyomi": ["シ"],
+  "kunyomi": ["よ", "よ-つ", "よ-っつ", "よん"],
+  "related_kanji": [
+    {"kanji": "匹", "meaning": "Counter for small animals", "slug": "hiki"},
+    {"kanji": "皿", "meaning": "Plate", "slug": "sara"},
+    {"kanji": "目", "meaning": "Eye", "slug": "me"},
+    {"kanji": "買", "meaning": "Buy", "slug": "ka-u"},
+    {"kanji": "西", "meaning": "West", "slug": "nishi"}
+  ],
+  "grammar_note": "Because 'shi' sounds like the word for 'death', 'yon' is often preferred. April is always 'Shigatsu'.",
+  "examples": [
+    {
+      "japanese": "私の家族は父と母と弟、そして私の四人家族で、週末はいつもみんなで一緒に美味しい夕食を食べるのが楽しみです。",
+      "romaji": "Watashi no kazoku wa chichi to haha to otouto, soshite watashi no yonin kazoku de, shuumatsu wa itsumo minna de issho ni oishii yuushoku o taberu no ga tanoshimi desu.",
+      "english": "My family consists of four people: my father, mother, younger brother, and myself, and I look forward to us all eating a delicious dinner together on weekends."
+    },
+    {
+      "japanese": "大学の近くにあるアパートは四階建ての古い建物ですが、家賃がとても安いので学生たちには非常に人気があります。",
+      "romaji": "Daigaku no chikaku ni aru apaato wa yonkaidate no furui tatemono desu ga, yachin ga totemo yasui node gakuseitachi ni wa hijou ni ninki ga arimasu.",
+      "english": "The apartment near the university is an old four-story building, but it is very popular among students because the rent is very cheap."
+    },
+    {
+      "japanese": "四月になると桜の花が満開になり、日本の公園は花見を楽しむたくさんの人々でどこも賑やかになります。",
+      "romaji": "Shigatsu ni naru to sakura no hana ga mankai ni nari, nihon no kouen wa hanami o tanoshimu takusan no hitobito de doko mo nigiyaka ni narimasu.",
+      "english": "When April comes, the cherry blossoms reach full bloom, and Japanese parks everywhere become lively with many people enjoying flower viewing."
+    }
+  ]
+},
+{
+  "id": "n5-018",
+  "kanji": "三",
+  "slug": "san-three",
+  "meaning": "Three",
+  "romaji": "san",
+  "onyomi": ["サン"],
+  "kunyomi": ["み", "み-つ", "み-っつ"],
+  "related_kanji": [
+    {"kanji": "王", "meaning": "King", "slug": "ou"},
+    {"kanji": "主", "meaning": "Master/Main", "slug": "nushi-shuu"},
+    {"kanji": "生", "meaning": "Life/Birth", "slug": "i-kiru"},
+    {"kanji": "川", "meaning": "River", "slug": "kawa"},
+    {"kanji": "立", "meaning": "Stand", "slug": "ta-tsu"}
+  ],
+  "grammar_note": "Three horizontal strokes. In the stroke order, the middle stroke is the shortest, and the bottom stroke is the longest.",
+  "examples": [
+    {
+      "japanese": "三日間ずっと降り続いていた激しい雨がようやく止んで、窓の外にはとても綺麗な虹がかかっているのが見えます。",
+      "romaji": "Mikkakan zutto furitsuzuite ita hageshii ame ga youyaku yande, mado no soto ni wa totemo kirei na niji ga kakatte iru no ga miemasu.",
+      "english": "The heavy rain that had been falling for three days straight finally stopped, and I can see a very beautiful rainbow appearing outside the window."
+    },
+    {
+      "japanese": "午後三時になったので仕事の手を一度止めて、温かいコーヒーを飲みながら少しだけ休憩することにしました。",
+      "romaji": "Gogo sanji ni natta node shigoto no te o ichido tomete, atatakai koohii o nominagara sukoshi dake kyuukei suru koto ni shimashita.",
+      "english": "It became 3:00 PM, so I stopped my work for a moment and decided to take a short break while drinking some warm coffee."
+    },
+    {
+      "japanese": "テーブルの上に置いてある三つのリンゴの中から、一番大きくて赤くなっているものを選んで食べることにしました。",
+      "romaji": "Teeburu no ue ni oite aru mittsu no ringo no naka kara, ichiban ookikute akaku natte iru mono o erande taberu koto ni shimashita.",
+      "english": "From among the three apples placed on the table, I decided to choose and eat the one that is the largest and reddest."
+    }
+  ]
+},
+{
+  "id": "n5-017",
+  "kanji": "二",
+  "slug": "ni-two",
+  "meaning": "Two",
+  "romaji": "ni",
+  "onyomi": ["ニ", "ジ"],
+  "kunyomi": ["ふた", "ふた-つ"],
+  "related_kanji": [
+    {"kanji": "元", "meaning": "Origin", "slug": "moto"},
+    {"kanji": "井", "meaning": "Well", "slug": "i"},
+    {"kanji": "仁", "meaning": "Benevolence", "slug": "jin"},
+    {"kanji": "示", "meaning": "Show", "slug": "shime-su"},
+    {"kanji": "云", "meaning": "Say", "slug": "i-u"}
+  ],
+  "grammar_note": "Two horizontal strokes. Used in 'Futsuka' (2nd day of the month) and 'Futari' (two people).",
+  "examples": [
+    {
+      "japanese": "来週の月曜日と火曜日の二日間、出張のために大阪へ行かなければならないので、今からホテルの予約をします。",
+      "romaji": "Raishuu no getsuyoubi to kayoubi no futsukakan, shucchou no tame ni Oosaka e ikanakereba naranai node, ima kara hoteru no yoyaku o shimasu.",
+      "english": "Since I have to go to Osaka for a business trip for two days, next Monday and Tuesday, I will make a hotel reservation now."
+    },
+    {
+      "japanese": "私の目の前には二つの道がありますが、どちらが正しい方向なのか分からないので地図をもう一度確認してみます。",
+      "romaji": "Watashi no me no mae ni wa futatsu no michi ga arimasu ga, dochira ga tadashii houkou na no ka wakaranai node chizu o mou ichido kakunin shite mimasu.",
+      "english": "There are two paths in front of me, but I don't know which one is the correct direction, so I will check the map once more."
+    },
+    {
+      "japanese": "仲の良い友達と二人で静かなカフェに行って、将来の夢や最近あった出来事についてゆっくりと語り合いました。",
+      "romaji": "Naka no yoi tomodachi to futari de shizuka na kafe ni itte, shourai no yume ya saikin atta dekigoto ni tsuite yukkuri to katariaimashita.",
+      "english": "I went to a quiet cafe with a close friend, and the two of us talked leisurely about our future dreams and recent events."
+    }
+  ]
+},
+{
+  "id": "n5-016",
+  "kanji": "一",
+  "slug": "ichi-one",
+  "meaning": "One",
+  "romaji": "ichi / itsu",
+  "onyomi": ["イチ", "イツ"],
+  "kunyomi": ["ひと", "ひと-つ"],
+  "related_kanji": [
+    {"kanji": "丁", "meaning": "Town block", "slug": "chou"},
+    {"kanji": "下", "meaning": "Down", "slug": "shita"},
+    {"kanji": "不", "meaning": "Non-", "slug": "fu"},
+    {"kanji": "万", "meaning": "Ten thousand", "slug": "man"},
+    {"kanji": "天", "meaning": "Heaven", "slug": "ten"}
+  ],
+  "grammar_note": "The simplest Kanji, but has many readings depending on what follows it (e.g., 'Ippon', 'Ittai', 'Hitori').",
+  "examples": [
+    {
+      "japanese": "一月の一日は日本で一番大切な祝日なので、多くの人々が家族と一緒に新しい年のお祝いをして過ごします。",
+      "romaji": "Ichigatsu no tsuitachi wa nihon de ichiban taisetsu na shukujitsu na node, ooku no hitobito ga kazoku to issho ni atarashii toshi no oiwai o shite sugoshimasu.",
+      "english": "January 1st is the most important holiday in Japan, so many people spend time with their families celebrating the new year."
+    },
+    {
+      "japanese": "一日中ずっと家で勉強していたので、気分転換のために少しだけ外へ出て散歩をしてこようと思います。",
+      "romaji": "Ichinichijuu zutto ie de benkyou shite ita node, kibun tenkan no tame ni sukoshi dake soto e dete sanpo o shite koyou to omoimasu.",
+      "english": "Since I have been studying at home all day long, I think I'll go outside for a short walk to change my mood."
+    },
+    {
+      "japanese": "まずは一冊の教科書を最後までしっかり読み終えてから、次の新しい教材を買うかどうかを決めるつもりです。",
+      "romaji": "Mazu wa issatsu no kyoukasho o saigo made shikkari yomiorete kara, tsugi no atarashii kyouzai o kau ka dou ka o kimeru tsumori desu.",
+      "english": "I intend to finish reading one textbook thoroughly to the end before deciding whether or not to buy the next new teaching material."
+    }
+  ]
+},
+  {
+  "id": "n5-015",
+  "kanji": "右",
+  "slug": "migi-right",
+  "meaning": "Right (Direction)",
+  "romaji": "migi / u / yuu",
+  "onyomi": ["ウ", "ユウ"],
+  "kunyomi": ["みぎ"],
+  "related_kanji": [
+    {"kanji": "左", "meaning": "Left", "slug": "hidari"},
+    {"kanji": "若", "meaning": "Young", "slug": "waka-i"},
+    {"kanji": "佑", "meaning": "Help", "slug": "tasu-keru"},
+    {"kanji": "石", "meaning": "Stone", "slug": "ishi"},
+    {"kanji": "口", "meaning": "Mouth", "slug": "kuchi"}
+  ],
+  "grammar_note": "A hand going towards the mouth. In the stroke order for 'Right', the horizontal stroke is drawn first, followed by the downward stroke.",
+  "examples": [
+    {
+      "japanese": "この道を真っ直ぐ進んでから二つ目の大きな交差点を右に曲がると、目の前に赤い屋根の図書館が見えてくるはずです。",
+      "romaji": "Kono michi o massugu susunde kara futatsume no ookina kousaten o migi ni magaru to, me no mae ni akai yane no toshokan ga miete kuru hazu desu.",
+      "english": "If you go straight down this road and turn right at the second large intersection, you should see a library with a red roof right in front of you."
+    },
+    {
+      "japanese": "日本の道路では車は常に左側を走らなければなりませんが、歩行者は右側を歩くのが一般的な交通ルールだと教えられています。",
+      "romaji": "Nihon no douro de wa kuruma wa tsune ni hidarigawa o hashiranakereba narimasen ga, hokousha wa migigawa o aruku no ga ippanteki na koutsuu ruuru da to oshierarete imasu.",
+      "english": "On Japanese roads, cars must always drive on the left side, but it is taught as a general traffic rule that pedestrians should walk on the right side."
+    },
+    {
+      "japanese": "右手にあるペンを一回置いてから、まずは先生の注意事項を最後まで集中して聞いて、それから練習問題を解き始めてください。",
+      "romaji": "Migite ni aru pen o ikkai oite kara, mazu wa sensei no chuui jikou o saigo made shuuchuu shite kiite, sore kara renshuu mondai o tokihajimete kudasai.",
+      "english": "Please put down the pen in your right hand once, listen intently to the teacher's instructions until the end, and then begin solving the practice problems."
+    }
+  ]
+},
+{
+  "id": "n5-014",
+  "kanji": "左",
+  "slug": "hidari-left",
+  "meaning": "Left (Direction)",
+  "romaji": "hidari / sa",
+  "onyomi": ["サ"],
+  "kunyomi": ["ひだり"],
+  "related_kanji": [
+    {"kanji": "右", "meaning": "Right", "slug": "migi"},
+    {"kanji": "差", "meaning": "Difference", "slug": "sa"},
+    {"kanji": "佐", "meaning": "Assistant", "slug": "sa"},
+    {"kanji": "在", "meaning": "Exist", "slug": "a-ru"},
+    {"kanji": "工", "meaning": "Construction", "slug": "kou"}
+  ],
+  "grammar_note": "A hand holding a tool. Unlike 'Right', the vertical downward stroke is drawn first in the stroke order for 'Left'.",
+  "examples": [
+    {
+      "japanese": "地図で現在地を確認したところ、今私たちが立っている場所から左側に向かってしばらく歩くと、有名な古い神社に辿り着くようです。",
+      "romaji": "Chizu de genzaichi o kakunin shita tokoro, ima watashitachi ga tatte iru basho kara hidarigawa ni mukatte shibaraku aruku to, yuumei na furui jinja ni tadoritsuku you desu.",
+      "english": "Upon checking our current location on the map, it seems that if we walk toward the left for a while from where we are standing now, we will reach a famous old shrine."
+    },
+    {
+      "japanese": "左利きの人にとっては、世の中の多くの道具が右利きの人のために作られているので、ハサミやカメラを使うのが少し不便だと感じることがあります。",
+      "romaji": "Hidarikiki no hito ni totte wa, yononaka no ooku no dougu ga migikiki no hito no tame ni tsukurarete iru node, hasami ya kamera o tsukau no ga sukoshi fuben da to kanjiru koto ga arimasu.",
+      "english": "For left-handed people, since most tools in the world are made for right-handed people, they sometimes feel it is a bit inconvenient to use things like scissors or cameras."
+    },
+    {
+      "japanese": "電車のホームでは黄色い線の内側の左の方に順番に並んで、電車が完全に停車してドアが開くまで静かに待つようにしましょう。",
+      "romaji": "Densha no hoomu de wa kiiroi sen no uchigawa no hidari no hou ni junban ni narande, densha ga kanzen ni teisha shite doa ga aku made shizuka ni matsu you ni shimashou.",
+      "english": "Let's line up in order on the left side inside the yellow line on the train platform and wait quietly until the train stops completely and the doors open."
+    }
+  ]
+},
+{
+  "id": "n5-013",
+  "kanji": "下",
+  "slug": "shita-down",
+  "meaning": "Down / Below / Under",
+  "romaji": "shita / ka / ge",
+  "onyomi": ["カ", "ゲ"],
+  "kunyomi": ["した", "もと", "さ-げる", "お-りる"],
+  "related_kanji": [
+    {"kanji": "上", "meaning": "Up", "slug": "ue"},
+    {"kanji": "不", "meaning": "Negative", "slug": "fu"},
+    {"kanji": "与", "meaning": "Give", "slug": "ata-eru"},
+    {"kanji": "万", "meaning": "Ten Thousand", "slug": "man"},
+    {"kanji": "面", "meaning": "Surface", "slug": "men"}
+  ],
+  "grammar_note": "A pointer below a reference line. It is used in compound words like 'Chika' (underground) and 'Kutsu-shita' (socks).",
+  "examples": [
+    {
+      "japanese": "大切な書類を机の下に落としてしまったかもしれないので、懐中電灯を持ってきて暗い隙間を一生懸命に探しているところです。",
+      "romaji": "Taisetsu na shorui o tsukue no shita ni otoshite shimatta kamo shirenai node, kaichuudentou o motte kite kurai sukima o isshoukenmei ni sagashite iru tokoro desu.",
+      "english": "I might have dropped an important document under the desk, so I am currently searching hard in the dark gap with a flashlight."
+    },
+    {
+      "japanese": "雨の日でも地下鉄を利用すれば濡れることなく移動できますし、渋滞にも巻き込まれないので予定通りに目的地へ着くことができます。",
+      "romaji": "Ame no hi demo chikatetsu o riyou sureba nureru koto naku idou dekimasu shi, juutai ni mo makikomarenai node yotei doori ni mokutekichi e tsuku koto ga dekimasu.",
+      "english": "Even on rainy days, if you use the subway, you can travel without getting wet, and since you won't get caught in traffic, you can arrive at your destination as scheduled."
+    },
+    {
+      "japanese": "急な階段を下りる時は足元が非常に滑りやすくなっていて危険ですので、必ず手すりをしっかり掴んで一歩ずつ慎重に歩いてください。",
+      "romaji": "Kyuu na kaidan o oriru toki wa ashimoto ga hijou ni suberiyasuku natte ite kiken desu node, kanarazu tesuri o shikkari tsukande ippo zutsu shinchou ni aruite kudasai.",
+      "english": "When going down steep stairs, it is dangerous because your footing is very slippery, so please be sure to hold the handrail firmly and walk carefully one step at a time."
+    }
+  ]
+},
+{
+  "id": "n5-012",
+  "kanji": "上",
+  "slug": "ue-up",
+  "meaning": "Up / Above / On",
+  "romaji": "ue / jou / shou",
+  "onyomi": ["ジョウ", "ショウ"],
+  "kunyomi": ["うえ", "あ-がる", "のぼ-る"],
+  "related_kanji": [
+    {"kanji": "下", "meaning": "Down", "slug": "shita"},
+    {"kanji": "止", "meaning": "Stop", "slug": "to-maru"},
+    {"kanji": "正", "meaning": "Correct", "slug": "tada-shii"},
+    {"kanji": "卓", "meaning": "Table", "slug": "taku"},
+    {"kanji": "占", "meaning": "Occupy", "slug": "shi-meru"}
+  ],
+  "grammar_note": "A pointer above a reference line. Used in 'Jouzu' (skillful), which literally translates to 'upper hand'.",
+  "examples": [
+    {
+      "japanese": "テーブルの上に置いておいたはずの車の鍵がどこにも見当たらないので、家族の誰かが間違えて自分のカバンに入れてしまったのかもしれません。",
+      "romaji": "Teeburu no ue ni oite oita hazu no kuruma no kagi ga doko ni mo miataranai node, kazoku no dareka ga machigaete jibun no kaban ni irete shimatta no kamo shiremasen.",
+      "english": "The car keys that were supposed to be on the table are nowhere to be found, so maybe one of my family members accidentally put them in their own bag."
+    },
+    {
+      "japanese": "日本語の会話が早く上手になりたいのであれば、毎日少なくとも三十分間は声に出して教科書を読む練習を欠かさず続けることが何よりも大切です。",
+      "romaji": "Nihongo no kaiwa ga hayaku jouzu ni naritai no de areba, mainichi sukunakutomo sanjuppunkan wa koe ni dashite kyoukasho o yomu renshuu o kakasazu tsuzukeru koto ga naniyori mo taisetsu desu.",
+      "english": "If you want to become skillful at Japanese conversation quickly, it is more important than anything to consistently practice reading the textbook aloud for at least thirty minutes every day."
+    },
+    {
+      "japanese": "デパートの屋上に上がると街の景色を一望することができて、特に天気が良い日には遠くにある山々まで綺麗に見えるのでおすすめです。",
+      "romaji": "Depaato no okujou ni agaru to machi no keshiki o ichibou suru koto ga dekite, tokuni tenki ga yoi hi ni wa tooku ni aru yamayama made kirei ni mieru node osusume desu.",
+      "english": "When you go up to the department store rooftop, you can get a panoramic view of the city; I recommend it especially on clear days because you can see the distant mountains beautifully."
+    }
+  ]
+},
+{
+  "id": "n5-011",
+  "kanji": "田",
+  "slug": "ta-rice-field",
+  "meaning": "Rice field / Paddy",
+  "romaji": "ta / den",
+  "onyomi": ["デン"],
+  "kunyomi": ["た"],
+  "related_kanji": [
+    {"kanji": "町", "meaning": "Town", "slug": "machi"},
+    {"kanji": "思", "meaning": "Think", "slug": "omo-u"},
+    {"kanji": "男", "meaning": "Man", "slug": "otoko"},
+    {"kanji": "界", "meaning": "World", "slug": "kai"},
+    {"kanji": "胃", "meaning": "Stomach", "slug": "i"}
+  ],
+  "grammar_note": "A top-down view of a field divided into four sections. It is a key component of the Kanji for 'Man' (男), which combines 'Field' and 'Power'.",
+  "examples": [
+    {
+      "japanese": "電車の窓から外を眺めていると、見渡す限り一面に青々とした田んぼが広がっていて、日本の懐かしい田舎の風景を心ゆくまで楽しむことができます。",
+      "romaji": "Densha no mado kara soto o nagamete iru to, miwatasu kagiri ichimen ni aoao to shita tanbo ga hirogatte ite, nihon no natsukashii inaka no fuukei o kokoro yuku made tanoshimu koto ga dekimasu.",
+      "english": "Looking out the train window, lush green rice fields spread as far as the eye can see, allowing one to fully enjoy the nostalgic Japanese countryside scenery."
+    },
+    {
+      "japanese": "田中さんは大学で最新の農業技術について熱心に研究しており、休みの日は実際に田舎へ行って地元の農家の方々と一緒に田植えの作業を手伝っています。",
+      "romaji": "Tanaka-san wa daigaku de saishin no nougyou gijutsu ni tsuite nesshin ni kenkyuu shite ori, yasumi no hi wa jissai ni inaka e itte jimoto no nouka no katagata to issho ni taue no sagyou o tetsudatte imasu.",
+      "english": "Mr. Tanaka is enthusiastically researching the latest agricultural technology at university, and on his days off, he actually goes to the countryside to help local farmers with the rice planting work."
+    },
+    {
+      "japanese": "黄金色に輝く秋の田んぼは収穫の時期が近いことを教えてくれますが、この時期の農家の人たちは一年の中で最も忙しくて大変な毎日を過ごしています。",
+      "romaji": "Koganeyiro ni kagayaku aki no tanbo wa shuukaku no jiki ga chikai koto o oshiete kuremasu ga, kono jiki no nouka no hitotachi wa ichinen no naka de mottomo isogashikute taihen na mainichi o sugoshite imasu.",
+      "english": "The golden-shining rice fields in autumn tell us that the harvest season is near, but the farmers during this time spend the busiest and most difficult days of the year."
+    }
+  ]
+},
+ {
+  "id": "n5-010",
+  "kanji": "川",
+  "slug": "kawa-river",
+  "meaning": "River",
+  "romaji": "kawa / sen",
+  "onyomi": ["セン"],
+  "kunyomi": ["かわ"],
+  "related_kanji": [
+    {"kanji": "州", "meaning": "State/Province", "slug": "shuu"},
+    {"kanji": "順", "meaning": "Order", "slug": "jun"},
+    {"kanji": "流", "meaning": "Flow", "slug": "naga-reru"},
+    {"kanji": "泳", "meaning": "Swim", "slug": "oyo-gu"},
+    {"kanji": "洗", "meaning": "Wash", "slug": "ara-u"}
+  ],
+  "grammar_note": "A pictograph representing the flow of water; when used in surnames like 'Yamagawa', the 'kawa' often becomes 'gawa' due to rendaku.",
+  "examples": [
+    {
+      "japanese": "私の田舎にある大きな川では、夏休みになると近所の子供たちが集まって、夕方まで楽しそうに泳いだり魚を釣ったりしています。",
+      "romaji": "Watashi no inaka ni aru ookina kawa de wa, natsuyasumi ni naru to kinjo no kodomotachi ga atsumatte, yuugata made tanoshisou ni oyoidari sakana o tsuttari shite imasu.",
+      "english": "In the large river in my hometown, when summer vacation starts, neighborhood children gather and enjoy swimming and fishing until evening."
+    },
+    {
+      "japanese": "川のせせらぎを聞きながら静かな森の中でキャンプをすることは、日々の忙しい生活を忘れてリラックスするための最高の贅沢です。",
+      "romaji": "Kawa no seseragi o kikinagara shizuka na mori no naka de kyanpu o suru koto wa, hibi no isogashii seikatsu o wasurete rirakkusu suru tame no saikou no zeitaku desu.",
+      "english": "Camping in a quiet forest while listening to the murmuring of a river is the ultimate luxury for forgetting a busy daily life and relaxing."
+    },
+    {
+      "japanese": "大雨が降った後は川の水が急に増えて非常に危険な状態になるため、絶対に近づかないようにと地域の警察が注意を呼びかけています。",
+      "romaji": "Ooume ga futta ato wa kawa no mizu ga kyuu ni fuete hijou ni kiken na joutai ni naru tame, zettai ni chikazu kanai you ni to chiiki no keisatsu ga chuui o yobikakete imasu.",
+      "english": "Since the river water increases suddenly and becomes very dangerous after heavy rain, the local police are calling for caution to never approach it."
+    }
+  ]
+},
+{
+  "id": "n5-009",
+  "kanji": "山",
+  "slug": "yama-mountain",
+  "meaning": "Mountain",
+  "romaji": "yama / san",
+  "onyomi": ["サン"],
+  "kunyomi": ["やま"],
+  "related_kanji": [
+    {"kanji": "岩", "meaning": "Rock", "slug": "iwa"},
+    {"kanji": "岳", "meaning": "Peak", "slug": "take"},
+    {"kanji": "島", "meaning": "Island", "slug": "shima"},
+    {"kanji": "岸", "meaning": "Coast", "slug": "kishi"},
+    {"kanji": "炭", "meaning": "Charcoal", "slug": "sumi"}
+  ],
+  "grammar_note": "Symbolizes three mountain peaks. When used with specific names like 'Fuji-san', the onyomi 'san' is used, which is a homophone for 'Mr./Ms.' but written differently.",
+  "examples": [
+    {
+      "japanese": "天気がとても良い冬の朝には、空気が澄んでいるので遠くにある富士山の雪化粧をした美しい姿をはっきりと見ることができます。",
+      "romaji": "Tenki ga totemo yoi fuyu no asa ni wa, kuuki ga sunde iru node tooku ni aru Fujisan no yukigeshou o shita utsukushii sugata o hakkiri to miru koto ga dekimasu.",
+      "english": "On a very clear winter morning, because the air is crisp, you can clearly see the beautiful snow-covered figure of Mt. Fuji in the distance."
+    },
+    {
+      "japanese": "去年の夏休みには家族全員で標高が高い山へ登り、頂上に着いた時に目の前に広がった素晴らしい景色を見て言葉を失いました。",
+      "romaji": "Kyonen no natsuyasumi ni wa kazoku zenin de hyoukou ga takai yama e nobori, choujou ni tsuita toki ni me no mae ni hirogatta subarashii keshiki o mite kotoba o ushinaimashita.",
+      "english": "Last summer vacation, the whole family climbed a high mountain, and I was lost for words when I saw the wonderful scenery spread out before me at the summit."
+    },
+    {
+      "japanese": "山の中を散歩していると、都会では見ることができない珍しい植物や野生の動物に出会うことがあり、自然の豊かさを改めて感じます。",
+      "romaji": "Yama no naka o sanpo shite iru to, tokai de wa miru koto ga dekinai mezurashii shokubutsu ya yasei no doubutsu ni deau koto ga ari, shizen no yutakasa o aratamete kanjimasu.",
+      "english": "While walking in the mountains, you may encounter rare plants or wild animals that you cannot see in the city, making you feel the richness of nature once again."
+    }
+  ]
+},
+{
+  "id": "n5-008",
+  "kanji": "人",
+  "slug": "hito-person",
+  "meaning": "Person",
+  "romaji": "hito / jin / nin",
+  "onyomi": ["ジン", "ニン"],
+  "kunyomi": ["ひと", "-り"],
+  "related_kanji": [
+    {"kanji": "休", "meaning": "Rest", "slug": "yasu-mu"},
+    {"kanji": "体", "meaning": "Body", "slug": "karada"},
+    {"kanji": "付", "meaning": "Attach", "slug": "tsu-ku"},
+    {"kanji": "仕", "meaning": "Serve", "slug": "tsuka-eru"},
+    {"kanji": "代", "meaning": "Substitute", "slug": "ka-waru"}
+  ],
+  "grammar_note": "A very common radical (nin-ben). Note that 'one person' (hitori) and 'two people' (futari) are irregular readings you must memorize.",
+  "examples": [
+    {
+      "japanese": "あの有名なレストランの前には、美味しい料理を食べるために毎日たくさんの人が長い列を作って一時間以上も待っています。",
+      "romaji": "Ano yuumei na resutoran no mae ni wa, oishii ryouri o taberu tame ni mainichi takusan no hito ga nagai retsu o tsukutte ichijikan ijou mo matte imasu.",
+      "english": "In front of that famous restaurant, many people form a long line every day and wait for over an hour just to eat delicious food."
+    },
+    {
+      "japanese": "日本人は礼儀正しくて親切な人が多いという印象を持っていましたが、実際に日本に来てみてその通りだと改めて実感しました。",
+      "romaji": "Nihonjin wa reigitadaushikute shinsetsu na hito ga ooi to iu inshou o motte imashita ga, jissai ni nihon ni kite mite sono toori da to aratamete jikkan shimashita.",
+      "english": "I had the impression that Japanese people are often polite and kind, and having actually come to Japan, I felt once again that it is indeed true."
+    },
+    {
+      "japanese": "一人で静かに過ごす時間も大切ですが、週末に大好きな友達と一緒に笑いながら過ごす時間は、私にとって何よりも貴重なものです。",
+      "romaji": "Hitori de shizuka ni sugosu jikan mo taisetsu desu ga, shuumatsu ni daisuki na tomodachi to issho ni warainagara sugosu jikan wa, watashi ni totte naniyori mo kichou na mono desu.",
+      "english": "Time spent quietly alone is important, but time spent laughing with dear friends on the weekend is more precious to me than anything else."
+    }
+  ]
+},
+{
+  "id": "n5-007",
+  "kanji": "土",
+  "slug": "tsuchi-earth",
+  "meaning": "Earth / Soil / Ground",
+  "romaji": "tsuchi / do",
+  "onyomi": ["ド", "ト"],
+  "kunyomi": ["つち"],
+  "related_kanji": [
+    {"kanji": "地", "meaning": "Ground", "slug": "chi"},
+    {"kanji": "場", "meaning": "Place", "slug": "ba"},
+    {"kanji": "型", "meaning": "Model/Type", "slug": "kata"},
+    {"kanji": "塩", "meaning": "Salt", "slug": "shio"},
+    {"kanji": "埋", "meaning": "Bury", "slug": "u-meru"}
+  ],
+  "grammar_note": "Represents a mound of earth on the ground. Used for 'Doyoubi' (Saturday). Be careful not to confuse with '士' (warrior) where the top stroke is longer.",
+  "examples": [
+    {
+      "japanese": "土曜日の午後は予定を何も入れずに、暖かい日差しを浴びながら庭でゆっくりと読書をすることに決めています。",
+      "romaji": "Doyoubi no gogo wa yotei o nanimo irezu ni, atatakai hizashi o abinagara niwa de yukkuri to dokusho suru koto ni kimete imasu.",
+      "english": "I've decided not to make any plans for Saturday afternoon and instead spend it reading leisurely in the garden while basking in the warm sunlight."
+    },
+    {
+      "japanese": "美味しい野菜を育てるためには、まず庭の土をしっかりと耕して、栄養をたっぷり含んだ状態にすることが非常に重要です。",
+      "romaji": "Oishii yasai o sodateru tame ni wa, mazu niwa no tsuchi o shikkari to tagayashite, eiyou o tappuri fukunda joutai ni suru koto ga hijou ni juuyou desu.",
+      "english": "In order to grow delicious vegetables, it is extremely important to first till the garden soil thoroughly and ensure it is full of nutrients."
+    },
+    {
+      "japanese": "子供の頃は、近所の空き地で泥だらけになりながら、土を使って色々な形の家やトンネルを作って日が暮れるまで遊んでいました。",
+      "romaji": "Kodomo no koro wa, kinjo no akichi de dorodarake ni narinagara, tsuchi o tsukatte iroiro na katachi no ie ya tonneru o tsukutte hi ga kureru made asonde imashita.",
+      "english": "When I was a child, I used to play in the neighborhood vacant lot until sunset, getting covered in mud while making various shapes of houses and tunnels using soil."
+    }
+  ]
+},
+{
+  "id": "n5-006",
+  "kanji": "金",
+  "slug": "kane-gold",
+  "meaning": "Gold / Money",
+  "romaji": "kane / kin",
+  "onyomi": ["キン", "コン"],
+  "kunyomi": ["かね", "かな-"],
+  "related_kanji": [
+    {"kanji": "銀", "meaning": "Silver", "slug": "gin"},
+    {"kanji": "銅", "meaning": "Bronze", "slug": "dou"},
+    {"kanji": "円", "meaning": "Yen/Circle", "slug": "en"},
+    {"kanji": "針", "meaning": "Needle", "slug": "hari"},
+    {"kanji": "鉄", "meaning": "Iron", "slug": "tetsu"}
+  ],
+  "grammar_note": "A primary radical for metals. As a standalone word for money, the polite 'o' prefix is almost always used: 'Okane'.",
+  "examples": [
+    {
+      "japanese": "金曜日の仕事が終わった後は、仲の良い同僚たちと一緒に居酒屋へ行って、一週間の疲れを癒すのが私のルーティンになっています。",
+      "romaji": "Kinyoubi no shigoto ga owatta ato wa, naka no yoi douryoutachi to issho ni izakaya e itte, isshuukan no tsukare o iyasu no ga watashi no ruutin ni natte imasu.",
+      "english": "After finishing work on Friday, going to an izakaya with close colleagues to heal the fatigue of the week has become my routine."
+    },
+    {
+      "japanese": "無駄遣いを減らして一生懸命にお金を貯めて、来年の夏には憧れのヨーロッパへ一ヶ月間の長期旅行に行くつもりです。",
+      "romaji": "Mudazukai o herashite isshoukenmei ni okane o tamete, rainen no natsu ni wa akogare no yooroppa e ikkagetsukan no chouki ryokou ni iku tsumori desu.",
+      "english": "I intend to reduce wasteful spending, work hard to save money, and go on a long-term one-month trip to my dream destination, Europe, next summer."
+    },
+    {
+      "japanese": "今回の世界大会で見事に金メダルを獲得した選手のインタビューを聞いて、夢を諦めずに努力し続けることの大切さを学びました。",
+      "romaji": "Konkai no sekai taikai de migoto ni kinmedaru o kakutoku shita senshu no intabyuu o kiite, yume o akiramezu ni doryoku shitsuzukeru koto no taisetsu sa o manabimashita.",
+      "english": "Listening to the interview of the athlete who brilliantly won the gold medal at this world championship, I learned the importance of continuing to strive without giving up on one's dreams."
+    }
+  ]
+},
+  {
       "id": "n5-001",
       "kanji": "日",
       "slug": "hi-sun",
