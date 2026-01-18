@@ -3,70 +3,25 @@
 @tailwind utilities;
 
 :root {
-  /* 2026 Minimalist Color Palette */
-  --foreground-rgb: 15, 23, 42;    /* Slate 900 */
-  --background-start-rgb: 252, 252, 252; /* Off-white */
-  --background-end-rgb: 255, 255, 255;
-  
-  --accent-blue: 37, 99, 235;     /* Blue 600 */
-  --card-border: 241, 245, 249;   /* Slate 100 */
+  --bg-app: #f8fafc;
+  --accent: #2563eb;
 }
 
-@layer base {
-  body {
-    @apply antialiased text-slate-900 selection:bg-blue-100 selection:text-blue-700;
-    color: rgb(var(--foreground-rgb));
-    background: linear-gradient(
-        to bottom,
-        transparent,
-        rgb(var(--background-end-rgb))
-      )
-      rgb(var(--background-start-rgb));
-  }
-
-  /* Optimized Font Loading for Japanese Kanji */
-  .font-japanese {
-    font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "Roboto", "Meiryo", "メイリオ", sans-serif;
-    font-feature-settings: "palt"; /* Proportional alternate widths for cleaner spacing */
-  }
+body {
+  @apply bg-[var(--bg-app)] text-slate-900 antialiased;
+  font-family: 'Inter', system-ui, sans-serif;
 }
 
-@layer components {
-  /* Bento Card UI Pattern 
-     SEO Note: Using fixed transition times prevents "stutter" during crawl 
-  */
-  .bento-card {
-    @apply bg-white border border-slate-100 rounded-[2.5rem] p-8 
-           transition-all duration-500 ease-out hover:shadow-2xl 
-           hover:shadow-blue-500/5 hover:-translate-y-1 active:scale-[0.98];
-  }
-
-  /* Typography Scale */
-  .heading-hero {
-    @apply text-6xl md:text-8xl font-black tracking-tighter leading-[0.9];
-  }
-
-  /* Custom Scrollbar for better UX */
-  ::-webkit-scrollbar {
-    width: 6px;
-  }
-  ::-webkit-scrollbar-track {
-    @apply bg-transparent;
-  }
-  ::-webkit-scrollbar-thumb {
-    @apply bg-slate-200 rounded-full hover:bg-slate-300 transition-colors;
-  }
+.glass-nav {
+  @apply fixed top-0 w-full z-50 bg-white/70 backdrop-blur-xl border-b border-slate-200/60;
 }
 
-/* AD PLACEMENT PLACEHOLDERS 
-   Prevents Cumulative Layout Shift (CLS) for AdSense 
-*/
-.ad-skeleton {
-  @apply bg-slate-50 border border-dashed border-slate-200 rounded-3xl 
-         flex items-center justify-center min-h-[250px] relative overflow-hidden;
+.bento-card {
+  @apply bg-white border border-slate-200 rounded-[2.5rem] p-10 
+         transition-all duration-500 ease-out shadow-sm
+         hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-2;
 }
 
-.ad-skeleton::after {
-  content: "Sponsored Content";
-  @apply absolute bottom-2 right-4 text-[8px] font-bold uppercase tracking-widest text-slate-300;
+.font-japanese {
+  font-feature-settings: "palt";
 }
