@@ -1,0 +1,48 @@
+{
+  "n5": [
+    {
+      "kanji": "一",
+      "onyomi": "イチ",
+      "kunyomi": "ひと-つ",
+      "meaning": "One"
+    },
+    {
+      "kanji": "二",
+      "onyomi": "ニ",
+      "kunyomi": "ふた-つ",
+      "meaning": "Two"
+    },
+    {
+      "kanji": "三",
+      "onyomi": "サン",
+      "kunyomi": "みっ-つ",
+      "meaning": "Three"
+    },
+    {
+      "kanji": "日",
+      "onyomi": "ニチ, ジツ",
+      "kunyomi": "ひ, -び, -か",
+      "meaning": "Day, Sun"
+    },
+    {
+      "kanji": "本",
+      "onyomi": "ホン",
+      "kunyomi": "もと",
+      "meaning": "Book, Origin"
+    }
+  ],
+  "n4": [
+    {
+      "kanji": "空",
+      "onyomi": "クウ",
+      "kunyomi": "そら, あ-く, から",
+      "meaning": "Sky, Empty"
+    },
+    {
+      "kanji": "海",
+      "onyomi": "カイ",
+      "kunyomi": "うみ",
+      "meaning": "Sea, Ocean"
+    }
+  ]
+}
