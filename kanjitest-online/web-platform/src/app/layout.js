@@ -1,77 +1,71 @@
-import "./globals.css"; // Ensure this file exists in #4 src/app/
+import "./globals.css";
+import Script from 'next/script';
 import Link from 'next/link';
 
 export const metadata = {
   title: {
-    default: "Kanjitest.online | Free JLPT Study Tools",
+    default: "Kanjitest.online | Free JLPT Study Tools & Mock Exams",
     template: "%s | Kanjitest.online"
   },
-  description: "Free JLPT Kanji, Grammar, and Vocabulary practice tests for N5, N4, N3, N2, and N1 levels.",
+  description: "Master the JLPT with free interactive Kanji lists and practice tests. Optimized for N5, N4, N3, N2, and N1 levels.",
   keywords: ["JLPT", "Japanese Test", "Kanji", "N5", "N4", "N3", "N2", "N1", "Japanese Grammar"],
+  metadataBase: new URL('https://kanjitest.online'),
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        {/* Replace YOUR_ID with your real Google AdSense Publisher ID */}
-        {/* <script 
+        {/* Lazy-loaded AdSense for SEO performance */}
+        <Script 
           async 
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_ID" 
-          crossorigin="anonymous"
-        ></script> */}
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
       </head>
-      <body className="bg-slate-50 text-slate-900 min-h-screen flex flex-col">
-        {/* #5 Global Header */}
-        <nav className="bg-white border-b border-slate-200 sticky top-0 z-50">
-          <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-            <Link href="/" className="text-2xl font-black text-blue-600 tracking-tighter">
-              KANJITEST<span className="text-slate-400">.ONLINE</span>
+      <body className="bg-[#fcfcfc] text-slate-900 min-h-screen flex flex-col font-sans antialiased">
+        {/* Modern Glassmorphic Header */}
+        <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
+          <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+            <Link href="/" className="flex items-center gap-2">
+              <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold italic">K</div>
+              <span className="text-xl font-black tracking-tighter uppercase">Kanjitest<span className="text-blue-600">.online</span></span>
             </Link>
             
-            <div className="hidden md:flex space-x-6 font-medium text-slate-600">
-              <Link href="/n5" className="hover:text-blue-600">N5</Link>
-              <Link href="/n4" className="hover:text-blue-600">N4</Link>
-              <Link href="/n3" className="hover:text-blue-600">N3</Link>
-              <Link href="/n2" className="hover:text-blue-600">N2</Link>
-              <Link href="/n1" className="hover:text-blue-600">N1</Link>
+            <div className="hidden md:flex items-center gap-8 text-xs font-black uppercase tracking-widest text-slate-500">
+              {['n5', 'n4', 'n3', 'n2', 'n1'].map(lvl => (
+                <Link key={lvl} href={`/${lvl}`} className="hover:text-blue-600 transition-colors">{lvl}</Link>
+              ))}
             </div>
           </div>
         </nav>
 
-        {/* Main Content Area */}
         <main className="flex-grow">
           {children}
         </main>
 
-        {/* #5 Global Footer */}
-        <footer className="bg-white border-t border-slate-200 py-12">
-          <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-              <h3 className="font-bold mb-4">About Kanjitest.online</h3>
-              <p className="text-sm text-slate-500">
-                The most comprehensive free resource for students preparing for the Japanese Language Proficiency Test.
+        {/* Semantic Footer for SEO Authority */}
+        <footer className="bg-white border-t border-slate-100 pt-16 pb-8">
+          <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-12">
+            <div className="md:col-span-2">
+              <div className="font-black text-lg mb-4">KANJITEST.ONLINE</div>
+              <p className="text-slate-500 text-sm max-w-sm leading-relaxed">
+                The most comprehensive open-source resource for JLPT preparation. 
+                Built for students, by developers.
               </p>
             </div>
             <div>
-              <h3 className="font-bold mb-4">Quick Links</h3>
-              <ul className="text-sm text-slate-500 space-y-2">
+              <h4 className="font-bold text-sm uppercase mb-4 tracking-widest text-blue-600">Resources</h4>
+              <ul className="text-sm text-slate-400 space-y-3">
                 <li><Link href="/privacy">Privacy Policy</Link></li>
                 <li><Link href="/terms">Terms of Service</Link></li>
-                <li><Link href="/contact">Contact Us</Link></li>
+                <li><Link href="/sitemap.xml">Sitemap</Link></li>
               </ul>
             </div>
-            <div>
-              <h3 className="font-bold mb-4">Study Level</h3>
-              <div className="flex flex-wrap gap-2">
-                {['N5', 'N4', 'N3', 'N2', 'N1'].map(lvl => (
-                  <span key={lvl} className="px-2 py-1 bg-slate-100 rounded text-xs font-bold">{lvl}</span>
-                ))}
-              </div>
-            </div>
           </div>
-          <div className="text-center mt-12 pt-8 border-t border-slate-100 text-xs text-slate-400">
-            © 2026 Kanjitest.online. All rights reserved.
+          <div className="max-w-7xl mx-auto px-4 mt-16 pt-8 border-t border-slate-50 text-[10px] text-slate-400 text-center uppercase tracking-[0.2em]">
+            © 2026 Kanjitest.online • Powered by Next.js 15
           </div>
         </footer>
       </body>
