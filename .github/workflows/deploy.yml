@@ -21,23 +21,22 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          # Cache is removed here to prevent the "Paths not resolved" error
-          # It will be slightly slower but much more reliable for troubleshooting
 
       - name: Install dependencies
-        working-directory: ./web-platform
+        # Path updated to match your GitHub structure
+        working-directory: ./kanjitest-online/web-platform
         run: npm install
 
       - name: Build with Next.js
-        working-directory: ./web-platform
-        # The "." forces Next.js to look for 'src/app' inside 'web-platform'
+        # Path updated to match your GitHub structure
+        working-directory: ./kanjitest-online/web-platform
         run: npx next build .
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # This folder is created by 'output: export' in next.config.js
-          path: ./web-platform/out
+          # Points to the 'out' folder inside your nested directory
+          path: ./kanjitest-online/web-platform/out
 
   deploy:
     environment:
