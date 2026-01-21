@@ -39,8 +39,8 @@ jobs:
 
       - name: 🏗️ Execute Universal Kanji Generator
         run: |
+          # Ensure generator.py is in your repository root
           # This script reads from data/[level]/kanji/data.json
-          # It outputs folders like n5/, n4/ directly to the root
           python generator.py
 
       - name: 🔍 SEO Validation
@@ -48,7 +48,7 @@ jobs:
           if [ -f sitemap.xml ]; then
             echo "✅ Sitemap generated in root."
           else
-            echo "❌ Sitemap generation failed."
+            echo "❌ Sitemap generation failed. Check generator.py logic."
             exit 1
           fi
 
@@ -58,10 +58,10 @@ jobs:
           git config --global user.name "kanjitest-automation-bot"
           git config --global user.email "bot@kanjitest.online"
           
-          # Stage level folders (n5, n4, etc.) and sitemap
-          # This ensures clean URLs: test.singhyogendra.com.np/n5/kanji/slug.html
+          # Force add level folders to ensure clean URLs in root
+          # This supports unlimited pages for test.singhyogendra.com.np
           git add n5/ n4/ n3/ n2/ n1/ sitemap.xml
           
-          # Commit using [skip ci] to prevent an infinite loop of builds
+          # Commit with [skip ci] to avoid recursive action triggers
           git commit -m "chore: auto-generate unlimited SEO kanji pages [skip ci]" || echo "No changes to commit"
           git push origin main
