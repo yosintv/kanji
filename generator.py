@@ -14,6 +14,7 @@ def get_pro_layout(title, desc, content, slug, kanji_char=None, lvl=None):
     """
     schema_json = ""
     if kanji_char:
+        # Note the double {{ }} to escape the JSON-LD structure in f-string
         schema_json = f"""
         <script type="application/ld+json">
         {{
@@ -84,7 +85,7 @@ def build():
         os.makedirs(os.path.join(lvl, 'kanji'), exist_ok=True)
 
         # 1. GENERATE DYNAMIC HUB (n5/index.html)
-        # Note: grid-cols-2 added for mobile support
+        # FIX: Added double curly braces for JavaScript variables inside f-string
         hub_content = f"""
         <div class="max-w-6xl mx-auto px-4 md:px-6 py-12 md:py-24">
             <header class="mb-12 md:mb-20">
@@ -114,7 +115,7 @@ def build():
                             <a href="/{lvl}/kanji/${{k.slug}}.html" class="w-full py-3 md:py-4 bg-slate-900 text-white text-[8px] md:text-[10px] font-black uppercase tracking-[0.2em] rounded-xl md:rounded-2xl hover:bg-indigo-600 transition-all">Details</a>
                         </div>
                     `).join('');
-                } catch (e) {{ console.error("Fetch Error:", e); }}
+                }} catch (e) {{ console.error("Fetch Error:", e); }}
             }}
             window.onload = loadHub;
         </script>"""
@@ -164,7 +165,6 @@ def build():
             all_urls.append(f"{BASE_URL}/{slug}")
 
     # 3. GENERATE GLOBAL LANDING PAGE (index.html)
-    # Also updated to show 2 columns on mobile
     home_grid = "".join([f"""
         <a href="/{k['lvl']}/kanji/{k['slug']}.html" class="glass-card p-8 md:p-12 rounded-[2.5rem] md:rounded-[4rem] group text-center">
             <div class="text-5xl md:text-8xl kanji-font mb-6 md:mb-8 group-hover:scale-110 transition-transform duration-700">{k['kanji']}</div>
