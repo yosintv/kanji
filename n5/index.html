@@ -14,7 +14,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Noto+Serif+JP:wght@900&display=swap');
-        body { font-family: 'Inter', sans-serif; background: #fdfdfd; color: #0f172a; }
+        body { font-family: 'Inter', sans-serif; background: #fdfdfd; color: #0f172a; overflow-x: hidden; }
         .kanji-font { font-family: 'Noto Serif JP', serif; }
         .glass-card { background: #ffffff; border: 1px solid #f1f5f9; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
         .glass-card:hover { transform: translateY(-8px); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08); border-color: #4f46e5; }
@@ -24,42 +24,43 @@
     </style>
 </head>
 <body class="selection:bg-indigo-100 selection:text-indigo-900">
-    <nav class="sticky top-0 z-50 border-b border-slate-100 bg-white/70 backdrop-blur-xl">
-        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="/" class="text-xl font-extrabold tracking-tighter text-indigo-600 italic">学 KANJITEST</a>
-            <div class="hidden md:flex gap-8 text-[11px] font-bold uppercase tracking-widest text-slate-400">
-                <a href="/" class="hover:text-indigo-600">Library</a>
-                <a href="/n5/" class="hover:text-indigo-600">N5 Level</a>
-                <span class="opacity-20">N4 Coming Soon</span>
-            </div>
+    <nav class="sticky top-0 z-50 border-b border-slate-100 bg-white/70 backdrop-blur-xl h-16 flex items-center px-4 md:px-6 justify-between">
+        <a href="/" class="text-xl font-extrabold tracking-tighter text-indigo-600 italic">学 KANJITEST</a>
+        <div class="flex gap-4 md:gap-8 text-[10px] md:text-[11px] font-bold uppercase tracking-widest text-slate-400">
+            <a href="/" class="hover:text-indigo-600">Library</a>
+            <a href="/n5/" class="text-indigo-600">N5 Hub</a>
         </div>
     </nav>
     <main class="min-h-screen">
-        <div class="max-w-6xl mx-auto px-6 py-24">
-            <header class="mb-20">
+        <div class="max-w-6xl mx-auto px-4 md:px-6 py-12 md:py-24">
+            <header class="mb-12 md:mb-20">
                 <div class="badge bg-indigo-50 text-indigo-600 mb-4">n5 Collection</div>
-                <h1 class="text-7xl font-black tracking-tighter italic text-slate-900 leading-none">The N5 <span class="text-indigo-600 underline">Collection.</span></h1>
+                <h1 class="text-5xl md:text-7xl font-black tracking-tighter italic text-slate-900 leading-none">The N5 <span class="text-indigo-600 underline">Collection.</span></h1>
             </header>
-            <div id="dynamic-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="shimmer h-64 rounded-[3rem]"></div>
-                <div class="shimmer h-64 rounded-[3rem]"></div>
-                <div class="shimmer h-64 rounded-[3rem]"></div>
-                <div class="shimmer h-64 rounded-[3rem]"></div>
+            <div id="dynamic-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8">
+                <div class="shimmer h-48 md:h-64 rounded-[2rem] md:rounded-[3rem]"></div>
+                <div class="shimmer h-48 md:h-64 rounded-[2rem] md:rounded-[3rem]"></div>
+                <div class="shimmer h-48 md:h-64 rounded-[2rem] md:rounded-[3rem]"></div>
+                <div class="shimmer h-48 md:h-64 rounded-[2rem] md:rounded-[3rem]"></div>
             </div>
         </div>
         <script>
             async function loadHub() {
-                const res = await fetch('/data/n5/kanji/data.json');
-                const d = await res.json();
-                const g = document.getElementById('dynamic-grid');
-                g.innerHTML = d.kanji_set.map(k => `
-                    <div class="glass-card p-10 rounded-[3rem] text-center flex flex-col items-center border border-slate-100">
-                        <div class="text-7xl kanji-font mb-6 text-slate-900">${k.kanji}</div>
-                        <h3 class="font-black uppercase tracking-tighter text-slate-800 text-lg">${k.meaning}</h3>
-                        <p class="text-[10px] text-slate-400 font-bold tracking-widest uppercase mb-8">${k.romaji}</p>
-                        <a href="/n5/kanji/${k.slug}.html" class="w-full py-4 bg-slate-900 text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-2xl hover:bg-indigo-600 transition-all">View More</a>
-                    </div>
-                `).join('');
+                try {
+                    const res = await fetch('/data/n5/kanji/data.json');
+                    const d = await res.json();
+                    const g = document.getElementById('dynamic-grid');
+                    g.innerHTML = d.kanji_set.map(k => `
+                        <div class="glass-card p-6 md:p-10 rounded-[2rem] md:rounded-[3rem] text-center flex flex-col items-center border border-slate-100">
+                            <div class="text-5xl md:text-7xl kanji-font mb-4 md:mb-6 text-slate-900">${k.kanji}</div>
+                            <div class="mb-6">
+                                <h3 class="font-black uppercase tracking-tighter text-slate-800 text-xs md:text-lg">${k.meaning}</h3>
+                                <p class="text-[8px] md:text-[10px] text-slate-400 font-bold tracking-widest uppercase">${k.romaji}</p>
+                            </div>
+                            <a href="/n5/kanji/${k.slug}.html" class="w-full py-3 md:py-4 bg-slate-900 text-white text-[8px] md:text-[10px] font-black uppercase tracking-[0.2em] rounded-xl md:rounded-2xl hover:bg-indigo-600 transition-all">Details</a>
+                        </div>
+                    `).join('');
+                } catch (e) { console.error("Fetch Error:", e); }
             }
             window.onload = loadHub;
         </script></main>
