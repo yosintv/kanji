@@ -1,89 +1,76 @@
 <!DOCTYPE html>
-<html lang="ja" dir="ltr">
+<html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JLPT Kanji & Grammar Study Hub – N5 to N1 完全無料</title>
-  <meta name="description" content="JLPT N5-N1漢字・文法・単語を無料で学習。ストローク順、例文、語彙一覧を完全網羅。初心者から上級者まで。">
-  
-  <!-- Open Graph -->
-  <meta property="og:title" content="JLPT Kanji & Grammar Study Hub">
-  <meta property="og:description" content="JLPT N5-N1漢字・文法・単語を無料で学習。">
-  <meta property="og:image" content="/assets/img/og-image.jpg">
-  <meta property="og:type" content="website">
-  
-  <link rel="canonical" href="https://your-domain.com/">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="/assets/css/main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Kanji Archive | KanjiTest.Online</title>
+    <meta name="description" content="Professional Japanese Mastery Platform">
+    <link rel="canonical" href="https://test.singhyogendra.com.np/index.html">
+    <meta property="og:title" content="The Kanji Archive">
+    <meta property="og:description" content="Professional Japanese Mastery Platform">
+    <meta property="og:url" content="https://test.singhyogendra.com.np/index.html">
+    <meta property="og:type" content="website">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Noto+Serif+JP:wght@900&display=swap');
+        body { font-family: 'Inter', sans-serif; background: #fdfdfd; color: #0f172a; }
+        .kanji-font { font-family: 'Noto Serif JP', serif; }
+        .glass-card { background: #ffffff; border: 1px solid #f1f5f9; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .glass-card:hover { transform: translateY(-8px); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08); border-color: #4f46e5; }
+        .badge { padding: 4px 12px; border-radius: 99px; font-size: 10px; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; }
+        .shimmer { background: linear-gradient(90deg, #f1f5f9 25%, #f8fafc 50%, #f1f5f9 75%); background-size: 200% 100%; animation: shimmer 1.5s infinite; }
+        @keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+    </style>
 </head>
-<body class="bg-gradient-to-br from-slate-50 to-blue-50 min-h-screen">
-  <header class="bg-white shadow-sm border-b">
-    <nav class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-      <a href="/" class="text-2xl font-bold text-slate-900">JLPT Study</a>
-      <div class="flex gap-4">
-        <a href="/search.html" class="text-slate-600 hover:text-slate-900">検索</a>
-        <input id="global-search" type="search" placeholder="漢字・文法を検索..." 
-               class="border border-slate-300 rounded-lg px-4 py-2 w-64 focus:outline-none focus:ring-2 focus:ring-blue-500">
-      </div>
+<body class="selection:bg-indigo-100 selection:text-indigo-900">
+    <nav class="sticky top-0 z-50 border-b border-slate-100 bg-white/70 backdrop-blur-xl">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="/" class="text-xl font-extrabold tracking-tighter text-indigo-600 italic">学 KANJITEST</a>
+            <div class="hidden md:flex gap-8 text-[11px] font-bold uppercase tracking-widest text-slate-400">
+                <a href="/" class="hover:text-indigo-600">Library</a>
+                <a href="/n5/" class="hover:text-indigo-600">N5 Level</a>
+                <span class="opacity-20">N4 Coming Soon</span>
+            </div>
+        </div>
     </nav>
-  </header>
-
-  <main class="max-w-7xl mx-auto px-4 py-12">
-    <section class="text-center mb-16">
-      <h1 class="mb-6">JLPT N5-N1 漢字・文法 学習ハブ</h1>
-      <p class="text-xl text-slate-600 mb-8 max-w-2xl mx-auto">全レベル網羅。ストローク順、例文、語彙を無料で学習。</p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/n5/" class="bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-blue-700 transition-all">N5から始める</a>
-        <a href="/search.html" class="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-xl font-semibold hover:bg-blue-50 transition-all">全漢字検索</a>
-      </div>
-    </section>
-
-    <section class="level-silo mb-16">
-      <a href="/n5/" class="kanji-card text-center">
-        <div class="text-5xl mb-4">五</div>
-        <h2>N5</h2>
-        <p class="text-slate-600">103漢字・基本文法</p>
-      </a>
-      <a href="/n4/" class="kanji-card text-center">
-        <div class="text-5xl mb-4">四</div>
-        <h2>N4</h2>
-        <p class="text-slate-600">181漢字</p>
-      </a>
-      <a href="/n3/" class="kanji-card text-center">
-        <div class="text-5xl mb-4">三</div>
-        <h2>N3</h2>
-        <p class="text-slate-600">395漢字</p>
-      </a>
-      <a href="/n2/" class="kanji-card text-center">
-        <div class="text-5xl mb-4">二</div>
-        <h2>N2</h2>
-        <p class="text-slate-600">1000漢字</p>
-      </a>
-      <a href="/n1/" class="kanji-card text-center">
-        <div class="text-5xl mb-4">一</div>
-        <h2>N1</h2>
-        <p class="text-slate-600">2000漢字</p>
-      </a>
-    </section>
-
-    <section class="grid md:grid-cols-2 gap-8">
-      <div class="grammar-card">
-        <h3>文法一覧</h3>
-        <p>N5-N1全文法パターンと例文。</p>
-      </div>
-      <div class="kanji-card">
-        <h3>単語集</h3>
-        <p>N5コア単語1000語。</p>
-      </div>
-    </section>
-  </main>
-
-  <footer class="bg-slate-900 text-white py-12 mt-24">
-    <div class="max-w-7xl mx-auto px-4 text-center">
-      <p>&copy; 2026 JLPT Study Hub. 無料・広告なし。</p>
-    </div>
-  </footer>
-
-  <script src="/assets/js/search.js"></script>
+    <main class="min-h-screen">
+    <div class="max-w-6xl mx-auto px-6 py-40">
+        <div class="text-center mb-32">
+            <h1 class="text-[100px] md:text-[140px] font-black tracking-tighter text-slate-900 leading-[0.8] mb-12 italic">
+                PURE <br><span class="text-indigo-600">KANJI.</span>
+            </h1>
+            <p class="text-2xl text-slate-400 font-medium max-w-xl mx-auto leading-relaxed">The high-authority digital collection for JLPT masters.</p>
+            <div class="mt-12">
+                <a href="/n5/" class="px-10 py-5 bg-indigo-600 text-white font-black uppercase tracking-widest rounded-full hover:shadow-2xl hover:shadow-indigo-200 transition-all">Enter Library</a>
+            </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <a href="/n5/kanji/toshi-year.html" class="glass-card p-12 rounded-[4rem] group">
+            <div class="text-8xl kanji-font mb-8 group-hover:scale-110 transition-transform duration-700">年</div>
+            <div class="badge bg-slate-900 text-white mb-2">n5</div>
+            <div class="text-sm font-black uppercase tracking-widest text-slate-800">Year</div>
+        </a>
+        <a href="/n5/kanji/hyaku-hundred.html" class="glass-card p-12 rounded-[4rem] group">
+            <div class="text-8xl kanji-font mb-8 group-hover:scale-110 transition-transform duration-700">百</div>
+            <div class="badge bg-slate-900 text-white mb-2">n5</div>
+            <div class="text-sm font-black uppercase tracking-widest text-slate-800">Hundred</div>
+        </a>
+        <a href="/n5/kanji/juu-ten.html" class="glass-card p-12 rounded-[4rem] group">
+            <div class="text-8xl kanji-font mb-8 group-hover:scale-110 transition-transform duration-700">十</div>
+            <div class="badge bg-slate-900 text-white mb-2">n5</div>
+            <div class="text-sm font-black uppercase tracking-widest text-slate-800">Ten</div>
+        </a>
+        <a href="/n5/kanji/kyuu-nine.html" class="glass-card p-12 rounded-[4rem] group">
+            <div class="text-8xl kanji-font mb-8 group-hover:scale-110 transition-transform duration-700">九</div>
+            <div class="badge bg-slate-900 text-white mb-2">n5</div>
+            <div class="text-sm font-black uppercase tracking-widest text-slate-800">Nine</div>
+        </a></div>
+    </div></main>
+    <footer class="border-t border-slate-100 py-20 bg-slate-50/50">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <p class="text-slate-400 text-[10px] font-bold uppercase tracking-[0.2em]">© 2026 Japanese_Language_Learning</p>
+        </div>
+    </footer>
 </body>
 </html>
