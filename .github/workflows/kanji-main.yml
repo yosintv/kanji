@@ -1,19 +1,12 @@
 name: KanjiTest Build & Deploy Engine
- 
-# Triggers: Runs when you update data or the generator script
+
 on:
   push:
     branches: [ main ]
     paths:
       - 'data/**'
       - 'generator.py'
-      - '.github/workflows/kanji-main.yml' 
   workflow_dispatch:
-    inputs:
-      reason:
-        description: 'Manual build trigger'
-        required: false
-        default: 'Updating Kanji Collection'
 
 permissions:
   contents: write
@@ -33,35 +26,25 @@ jobs:
           python-version: '3.11'
 
       - name: 📦 Install Requirements
-        run: |
-          python -m pip install --upgrade pip
-          pip install Jinja2 MarkupSafe
+        run: pip install Jinja2 MarkupSafe
+
+      - name: 📂 Verify File Structure
+        run: ls -R
 
       - name: 🏗️ Execute Universal Kanji Generator
         run: |
-          # Ensure generator.py is in your repository root
-          # This script reads from data/[level]/kanji/data.json
+          # This triggers your 'Infinite Page' logic
+          # We execute from root because that is where generator.py is
           python generator.py
 
-      - name: 🔍 SEO Validation
-        run: |
-          if [ -f sitemap.xml ]; then
-            echo "✅ Sitemap generated in root."
-          else
-            echo "❌ Sitemap generation failed. Check generator.py logic."
-            exit 1
-          fi
-
-      - name: 🚀 Deploy Unique SEO Pages to Root
-        if: github.event_name != 'pull_request'
+      - name: 🚀 Deploy N5 Demo to Root
+        if: success()
         run: |
           git config --global user.name "kanjitest-automation-bot"
           git config --global user.email "bot@kanjitest.online"
           
-          # Force add level folders to ensure clean URLs in root
-          # This supports unlimited pages for test.singhyogendra.com.np
-          git add n5/ n4/ n3/ n2/ n1/ sitemap.xml
+          # Adding the generated n5 folder and sitemap
+          git add n5/ sitemap.xml
           
-          # Commit with [skip ci] to avoid recursive action triggers
-          git commit -m "chore: auto-generate unlimited SEO kanji pages [skip ci]" || echo "No changes to commit"
+          git commit -m "chore: deploy n5 demo pages [skip ci]" || echo "No changes"
           git push origin main
