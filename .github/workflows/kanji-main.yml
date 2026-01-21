@@ -1,19 +1,19 @@
 name: KanjiTest Build & Deploy Engine
 
-# Triggers: Manual dispatch or automatic push to the data folders
+# Triggers: Runs when you update data or the generator script
 on:
   push:
     branches: [ main ]
     paths:
-      - 'data-engine/**'
+      - 'data/**'
       - 'generator.py'
       - '.github/workflows/deploy.yml'
   workflow_dispatch:
     inputs:
       reason:
-        description: 'Build Reason (e.g., Adding N4 Collection)'
+        description: 'Manual build trigger'
         required: false
-        default: 'Manual Site Refresh'
+        default: 'Updating Kanji Collection'
 
 permissions:
   contents: write
@@ -32,36 +32,36 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: 📦 Install Architecture Dependencies
+      - name: 📦 Install Requirements
         run: |
           python -m pip install --upgrade pip
           pip install Jinja2 MarkupSafe
 
       - name: 🏗️ Execute Universal Kanji Generator
         run: |
-          # This script generates folders (n5, n4, etc.) directly in the root
+          # This script reads from data/[level]/kanji/data.json
+          # It outputs folders like n5/, n4/ directly to the root
           python generator.py
 
-      - name: 🔍 SEO Validation & Sitemap Check
+      - name: 🔍 SEO Validation
         run: |
-          # Validation check for root-level sitemap
           if [ -f sitemap.xml ]; then
-            echo "✅ Global Sitemap generated successfully."
+            echo "✅ Sitemap generated in root."
           else
-            echo "❌ Sitemap missing in root. Build failed."
+            echo "❌ Sitemap generation failed."
             exit 1
           fi
 
-      - name: 🚀 Deploy Clean URLs to Root
+      - name: 🚀 Deploy Unique SEO Pages to Root
         if: github.event_name != 'pull_request'
         run: |
           git config --global user.name "kanjitest-automation-bot"
           git config --global user.email "bot@kanjitest.online"
           
-          # Stage level folders (n5, n4, n3, n2, n1) and the root sitemap
-          # This ensures URLs are test.singhyogendra.com.np/n5/kanji/...
+          # Stage level folders (n5, n4, etc.) and sitemap
+          # This ensures clean URLs: test.singhyogendra.com.np/n5/kanji/slug.html
           git add n5/ n4/ n3/ n2/ n1/ sitemap.xml
           
-          # Commit using skip ci to prevent recursion
-          git commit -m "chore: deploy unlimited pages to root [skip ci]" || echo "No changes to commit"
+          # Commit using [skip ci] to prevent an infinite loop of builds
+          git commit -m "chore: auto-generate unlimited SEO kanji pages [skip ci]" || echo "No changes to commit"
           git push origin main
