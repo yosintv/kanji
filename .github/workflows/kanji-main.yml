@@ -6,6 +6,7 @@ on:
     paths:
       - 'data/**'
       - 'generator.py'
+      - '.github/workflows/kanji-main.yml'
   workflow_dispatch:
 
 permissions:
@@ -26,21 +27,27 @@ jobs:
           python-version: '3.11'
 
       - name: 📦 Install Requirements
-        run: pip install Jinja2 MarkupSafe
+        run: |
+          python -m pip install --upgrade pip
+          pip install Jinja2 MarkupSafe
 
       - name: 📂 Verify File Structure
         run: ls -R
 
       - name: 🏗️ Execute Universal Kanji Generator
         run: |
-          # This triggers your 'Infinite Page' logic
-          # We execute from root because that is where generator.py is
+          # Executes the Zen-Edition generator from the repository root
           python generator.py
 
-- name: 🚀 Deploy N5 Dashboard
+      - name: 🚀 Deploy Unique SEO Pages & N5 Hub
+        if: success()
         run: |
-          git config --global user.name "bot"
+          git config --global user.name "kanjitest-automation-bot"
           git config --global user.email "bot@kanjitest.online"
+          
+          # Stage level folders, root index, and sitemap for clean URLs
           git add n5/ index.html sitemap.xml
-          git commit -m "feat: updated dynamic n5 index [skip ci]" || echo "No changes"
+          
+          # [skip ci] prevents the action from triggering itself in a loop
+          git commit -m "chore: auto-deploy unlimited kanji pages & dynamic hub [skip ci]" || echo "No changes to commit"
           git push origin main
