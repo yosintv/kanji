@@ -1,4 +1,4 @@
-name: KanjiTest Build & Deploy Engine
+name: 🎌 KanjiTest Premium Platform - Build & Deploy
 
 on:
   push:
@@ -7,16 +7,41 @@ on:
       - 'data/**'
       - 'generator.py'
       - '.github/workflows/kanji-main.yml'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'data/**'
+      - 'generator.py'
   workflow_dispatch:
+    inputs:
+      deploy_environment:
+        description: 'Deployment Environment'
+        required: false
+        default: 'production'
+        type: choice
+        options:
+          - production
+          - staging
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
+
+# Allow only one deployment at a time
+concurrency:
+  group: "kanji-deployment"
+  cancel-in-progress: false
 
 jobs:
-  build-and-deploy:
+  # ============================================
+  # JOB 1: Validate Data & Code Quality
+  # ============================================
+  validate:
+    name: 🔍 Validate Data & Code Quality
     runs-on: ubuntu-latest
     steps:
-      - name: 🛰️ Checkout Codebase
+      - name: 🛰️ Checkout Repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -25,29 +50,256 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+          cache: 'pip'
 
-      - name: 📦 Install Requirements
+      - name: 📦 Install Dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install Jinja2 MarkupSafe
+          pip install jsonschema
 
-      - name: 📂 Verify File Structure
-        run: ls -R
-
-      - name: 🏗️ Execute Universal Kanji Generator
+      - name: ✅ Validate JSON Data Structure
         run: |
-          # Executes the Zen-Edition generator from the repository root
+          echo "🔍 Validating N5 Kanji Data..."
+          python -c "
+          import json
+          import os
+          
+          json_path = 'data/n5/kanji/data.json'
+          
+          if not os.path.exists(json_path):
+              print('❌ Error: data.json not found!')
+              exit(1)
+          
+          with open(json_path, 'r', encoding='utf-8') as f:
+              data = json.load(f)
+          
+          # Validate structure
+          assert 'kanji_set' in data, 'Missing kanji_set key'
+          assert len(data['kanji_set']) > 0, 'Empty kanji_set'
+          
+          # Validate each kanji entry
+          for idx, item in enumerate(data['kanji_set']):
+              required_fields = ['kanji', 'meaning', 'romaji', 'onyomi', 'kunyomi', 'examples', 'slug']
+              for field in required_fields:
+                  assert field in item, f'Missing {field} in kanji #{idx}'
+              
+              # Validate examples
+              assert len(item['examples']) > 0, f'No examples for {item[\"kanji\"]}'
+              for ex in item['examples']:
+                  assert 'japanese' in ex and 'romaji' in ex and 'english' in ex
+          
+          print(f'✅ Validated {len(data[\"kanji_set\"])} kanji entries successfully!')
+          "
+
+      - name: 🧪 Test Generator Syntax
+        run: |
+          python -m py_compile generator.py
+          echo "✅ Generator syntax is valid"
+
+  # ============================================
+  # JOB 2: Build Static Site
+  # ============================================
+  build:
+    name: 🏗️ Build Premium Kanji Platform
+    runs-on: ubuntu-latest
+    needs: validate
+    steps:
+      - name: 🛰️ Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 🐍 Setup Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: 📦 Install Production Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          # No external dependencies needed - pure Python!
+          echo "✅ Build environment ready"
+
+      - name: 📂 Verify Project Structure
+        run: |
+          echo "📁 Project Structure:"
+          ls -lah
+          echo ""
+          echo "📁 Data Directory:"
+          ls -lah data/n5/kanji/ || echo "⚠️ Data directory structure may need adjustment"
+
+      - name: 🎨 Execute Premium Kanji Generator
+        run: |
+          echo "🚀 Starting build process..."
           python generator.py
+          echo "✅ Build completed successfully!"
 
-      - name: 🚀 Deploy Unique SEO Pages & N5 Hub
-        if: success()
+      - name: 📊 Build Summary
         run: |
-          git config --global user.name "kanjitest-automation-bot"
-          git config --global user.email "bot@kanjitest.online"
+          echo "📊 Build Statistics:"
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
           
-          # Stage level folders, root index, and sitemap for clean URLs
-          git add n5/ index.html sitemap.xml
+          # Count generated files
+          html_count=$(find . -name "*.html" -type f | wc -l)
+          echo "📄 HTML Pages Generated: $html_count"
           
-          # [skip ci] prevents the action from triggering itself in a loop
-          git commit -m "chore: auto-deploy unlimited kanji pages & dynamic hub [skip ci]" || echo "No changes to commit"
-          git push origin main
+          # Check for key files
+          [ -f "index.html" ] && echo "✅ Landing page created" || echo "❌ Landing page missing"
+          [ -f "n5/index.html" ] && echo "✅ N5 Hub created" || echo "❌ N5 Hub missing"
+          [ -f "sitemap.xml" ] && echo "✅ Sitemap generated" || echo "❌ Sitemap missing"
+          
+          # Count kanji pages
+          kanji_pages=$(find n5/kanji -name "*.html" -type f 2>/dev/null | wc -l)
+          echo "📚 Kanji Detail Pages: $kanji_pages"
+          
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+
+      - name: 🔍 Validate Generated Output
+        run: |
+          # Check if essential files exist
+          if [ ! -f "index.html" ]; then
+            echo "❌ Error: Landing page not generated!"
+            exit 1
+          fi
+          
+          if [ ! -f "n5/index.html" ]; then
+            echo "❌ Error: N5 Hub not generated!"
+            exit 1
+          fi
+          
+          if [ ! -f "sitemap.xml" ]; then
+            echo "❌ Error: Sitemap not generated!"
+            exit 1
+          fi
+          
+          echo "✅ All essential files validated"
+
+      - name: 📦 Upload Build Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: kanji-platform-build
+          path: |
+            index.html
+            sitemap.xml
+            n5/
+            data/
+          retention-days: 7
+          if-no-files-found: error
+
+  # ============================================
+  # JOB 3: Deploy to Production
+  # ============================================
+  deploy:
+    name: 🚀 Deploy to Production
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    environment:
+      name: production
+      url: https://test.singhyogendra.com.np
+    steps:
+      - name: 🛰️ Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 📥 Download Build Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: kanji-platform-build
+
+      - name: 🔧 Configure Git
+        run: |
+          git config --global user.name "KanjiTest AutoDeploy Bot"
+          git config --global user.email "autodeploy@kanjitest.online"
+          git config --global core.autocrlf false
+
+      - name: 📊 Pre-Deployment Check
+        run: |
+          echo "🔍 Verifying deployment package..."
+          
+          # List what will be deployed
+          echo "📦 Deployment Contents:"
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          ls -lah
+          echo ""
+          echo "📁 N5 Directory:"
+          ls -lah n5/ 2>/dev/null || echo "⚠️ N5 directory not found"
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+
+      - name: 🚀 Deploy to GitHub Pages Branch
+        run: |
+          # Stage all generated files
+          git add -f index.html sitemap.xml n5/ data/
+          
+          # Check if there are changes to commit
+          if git diff --staged --quiet; then
+            echo "ℹ️ No changes detected - skipping deployment"
+            echo "DEPLOYMENT_STATUS=skipped" >> $GITHUB_ENV
+          else
+            # Create deployment commit
+            git commit -m "🚀 Deploy: Premium Kanji Platform [v$(date +%Y.%m.%d-%H%M)] [skip ci]
+
+            📊 Deployment Statistics:
+            - Timestamp: $(date -u '+%Y-%m-%d %H:%M:%S UTC')
+            - Commit: ${{ github.sha }}
+            - Triggered by: ${{ github.actor }}
+            - Event: ${{ github.event_name }}
+            
+            🎯 Updates:
+            - Generated static HTML pages with premium UI/UX
+            - Updated sitemap.xml for SEO optimization
+            - Enhanced glassmorphism design system
+            - Improved accessibility and performance
+            
+            ✨ This is an automated deployment by KanjiTest CI/CD"
+            
+            # Push to main branch
+            git push origin main
+            
+            echo "DEPLOYMENT_STATUS=success" >> $GITHUB_ENV
+            echo "✅ Deployment completed successfully!"
+          fi
+
+      - name: 📢 Deployment Summary
+        run: |
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo "🎉 DEPLOYMENT SUMMARY"
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo "📅 Date: $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
+          echo "🔖 Commit: ${{ github.sha }}"
+          echo "👤 Triggered by: ${{ github.actor }}"
+          echo "🌐 Environment: Production"
+          echo "🔗 URL: https://test.singhyogendra.com.np"
+          echo "📊 Status: ${DEPLOYMENT_STATUS:-unknown}"
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+
+      - name: 🧹 Cleanup Artifacts
+        if: always()
+        uses: geekyeggo/delete-artifact@v5
+        with:
+          name: kanji-platform-build
+          failOnError: false
+
+  # ============================================
+  # JOB 4: Notify on Failure
+  # ============================================
+  notify-failure:
+    name: 📧 Notify Deployment Failure
+    runs-on: ubuntu-latest
+    needs: [validate, build, deploy]
+    if: failure()
+    steps:
+      - name: ⚠️ Report Failure
+        run: |
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo "❌ DEPLOYMENT FAILED"
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo "📅 Date: $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
+          echo "🔖 Commit: ${{ github.sha }}"
+          echo "👤 Triggered by: ${{ github.actor }}"
+          echo "📝 Check the workflow logs for details"
+          echo "🔗 Workflow URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
