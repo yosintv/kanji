@@ -5,7 +5,7 @@ from datetime import datetime
 # CONFIGURATION
 BASE_URL = "https://test.singhyogendra.com.np"
 BRAND_NAME = "KanjiTest.Online"
-DATA_ROOT = "data" # Source: data/n5/kanji/data.json
+DATA_ROOT = "data" # Source: data/n5/kanji/data.json 
 
 def get_seo_layout(title, desc, content, slug, kanji_char, level):
     """
