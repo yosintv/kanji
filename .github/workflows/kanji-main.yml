@@ -7,7 +7,7 @@ on:
     paths:
       - 'data/**'
       - 'generator.py'
-      - '.github/workflows/deploy.yml'
+      - '.github/workflows/kanji-main.yml'
   workflow_dispatch:
     inputs:
       reason:
