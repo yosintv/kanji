@@ -1,7 +1,7 @@
 import os
 import json
 from datetime import datetime
-
+ 
 # CONFIGURATION - kanjitest-online/web-platform
 BASE_URL = "https://test.singhyogendra.com.np"
 BRAND_NAME = "KanjiTest.Online"
