@@ -1,5 +1,5 @@
 name: KanjiTest Build & Deploy Engine
-
+ 
 # Triggers: Runs when you update data or the generator script
 on:
   push:
