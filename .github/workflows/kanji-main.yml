@@ -37,14 +37,10 @@ jobs:
           # We execute from root because that is where generator.py is
           python generator.py
 
-      - name: 🚀 Deploy N5 Demo to Root
-        if: success()
+- name: 🚀 Deploy N5 Dashboard
         run: |
-          git config --global user.name "kanjitest-automation-bot"
+          git config --global user.name "bot"
           git config --global user.email "bot@kanjitest.online"
-          
-          # Adding the generated n5 folder and sitemap
-          git add n5/ sitemap.xml
-          
-          git commit -m "chore: deploy n5 demo pages [skip ci]" || echo "No changes"
+          git add n5/ index.html sitemap.xml
+          git commit -m "feat: updated dynamic n5 index [skip ci]" || echo "No changes"
           git push origin main
